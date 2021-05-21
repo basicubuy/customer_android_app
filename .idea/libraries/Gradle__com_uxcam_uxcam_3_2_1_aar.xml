@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.uxcam:uxcam:3.2.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a10ec0844f166737161b7a04ca32e11b/jetified-uxcam-3.2.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a10ec0844f166737161b7a04ca32e11b/jetified-uxcam-3.2.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a10ec0844f166737161b7a04ca32e11b/jetified-uxcam-3.2.1/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.uxcam/uxcam/3.2.1/532aed10c9d0f81283b1fc5e8e3c2618d7f160e4/uxcam-3.2.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

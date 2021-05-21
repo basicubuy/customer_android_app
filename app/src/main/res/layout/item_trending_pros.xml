@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/rootLayout"
+    android:layout_margin="10dp"
+    android:layout_height="150dp">
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shape_roundRect_topLeftRadius="10dp"
+        app:shape_roundRect_bottomLeftRadius="10dp"
+        app:shape_roundRect_topRightRadius="10dp"
+        app:shape_roundRect_bottomRightRadius="10dp"
+        android:visibility="visible"
+        android:elevation="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/colorMaterialWhite"
+            android:padding="20dp">
+
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:shape_roundRect_topLeftRadius="10dp"
+                app:shape_roundRect_bottomLeftRadius="10dp"
+                app:shape_roundRect_topRightRadius="10dp"
+                app:shape_roundRect_bottomRightRadius="10dp"
+                android:visibility="visible"
+                >
+                <ImageView
+                    android:id="@+id/user_profile_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/fake_user_image"
+                    android:scaleType="centerCrop"/>
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp">
+
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="James mark williams"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="14sp"
+                    android:maxWidth="102dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/textColorDark_alt" />
+
+                <TextView
+                    android:id="@+id/service_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Web Developer"
+                    android:textSize="10sp"
+                    android:maxWidth="77dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/textColorDark" />
+
+                <TextView
+                    android:id="@+id/total_jobs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="75 jobs completed"
+                    android:textSize="10sp"
+                    android:maxWidth="93dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textColor="@color/textColorDark_alt" />
+
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="bottom"
+                    android:src="@drawable/ic_arrow_forward_black_24dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+</LinearLayout>

@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg"
+    android:id="@+id/main_lyt"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:expandedTitleMarginBottom="20dp"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="15dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="bottom"
+                app:layout_collapseMode="pin"
+                android:background="@android:color/white"
+                app:contentInsetStartWithNavigation="0dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/Toolbar.Light"  />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Safety Toolkit"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/textColorDark"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:gravity="center"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:paddingStart="20dp"
+      android:paddingEnd="20dp">
+
+      <TextView
+          android:id="@+id/project_name"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="30dp"
+          android:textColor="@color/textColorDark_alt"
+          android:textSize="18sp"
+          android:fontFamily="@font/poppins_medium"
+          android:text="Pro's Information"
+          />
+
+      <com.github.florent37.shapeofview.shapes.RoundRectView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:shape_roundRect_bottomLeftRadius="10dp"
+          app:shape_roundRect_bottomRightRadius="10dp"
+          app:shape_roundRect_topLeftRadius="10dp"
+          app:shape_roundRect_topRightRadius="10dp"
+          >
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:background="@color/colorMaterialWhite"
+              android:padding="20dp">
+
+              <com.github.florent37.shapeofview.shapes.RoundRectView
+                  android:layout_width="110dp"
+                  android:layout_height="110dp"
+                  app:shape_roundRect_bottomLeftRadius="10dp"
+                  app:shape_roundRect_bottomRightRadius="10dp"
+                  app:shape_roundRect_topLeftRadius="10dp"
+                  app:shape_roundRect_topRightRadius="10dp"
+                  >
+
+                  <ImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:src="@drawable/fake_user_image"/>
+
+              </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_marginStart="11dp">
+
+                  <TextView
+                      android:id="@+id/pro_name_txt"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/textColorDark_alt"
+                      android:textSize="14sp"
+                      android:fontFamily="@font/poppins_medium"
+                      android:text="John Ayomide"
+                      />
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textColor="@color/textColorDark"
+                      android:textSize="10sp"
+                      android:text="Web Developer"
+                      />
+
+                  <TextView
+                      android:id="@+id/id_verify_txt"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Identity Verified"
+                      android:textSize="10sp"
+                      android:textColor="@color/textColorDark"
+                      android:drawableStart="@drawable/id_check"
+                      android:drawablePadding="5dp"/>
+
+                  <TextView
+                      android:id="@+id/email_verify_txt"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Email Verified"
+                      android:textSize="10sp"
+                      android:textColor="@color/textColorDark"
+                      android:drawableStart="@drawable/email_check"
+                      android:drawablePadding="5dp"/>
+
+                  <TextView
+                      android:id="@+id/number_verify_txt"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Phone Number: 080000000"
+                      android:textSize="10sp"
+                      android:textColor="@color/textColorDark"
+                      android:drawableStart="@drawable/number_check"
+                      android:drawablePadding="5dp"/>
+
+              </LinearLayout>
+          </LinearLayout>
+
+      </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:textColor="@color/textColorDark_alt"
+          android:textSize="18sp"
+          android:text="Confirmation"
+          />
+
+      <com.github.florent37.shapeofview.shapes.RoundRectView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:shape_roundRect_bottomLeftRadius="10dp"
+          app:shape_roundRect_bottomRightRadius="10dp"
+          app:shape_roundRect_topLeftRadius="10dp"
+          app:shape_roundRect_topRightRadius="10dp"
+          >
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:gravity="center_horizontal"
+              android:background="@color/colorMaterialWhite"
+              android:padding="20dp">
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="F3G8R2"
+                  android:fontFamily="@font/poppins_bold"
+                  android:textColor="@color/colorPrimary"
+                  android:textSize="32sp"
+                  android:textAlignment="center"/>
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Verify that the artisan has this exact unique code to confirm his/her identity before granting access into your home or office space."
+                  android:textColor="@color/textColorDark"
+                  android:textSize="12sp"
+                  android:layout_marginTop="10dp"
+                  android:textAlignment="center"/>
+          </LinearLayout>
+
+      </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:textColor="@color/textColorDark_alt"
+          android:textSize="18sp"
+          android:text="Security"
+          />
+
+      <com.github.florent37.shapeofview.shapes.RoundRectView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:shape_roundRect_bottomLeftRadius="10dp"
+          app:shape_roundRect_bottomRightRadius="10dp"
+          app:shape_roundRect_topLeftRadius="10dp"
+          app:shape_roundRect_topRightRadius="10dp"
+          >
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:background="@color/colorMaterialWhite"
+              android:padding="20dp">
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Something wrong ?"
+                  android:fontFamily="@font/poppins_medium"
+                  android:textColor="@color/danger_notify"
+                  android:textSize="12sp"
+                  android:drawablePadding="10dp"
+                  android:drawableStart="@drawable/ic_alert_triangle"
+                  />
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="If anything looks suspicious, tap the button to alert us"
+                  android:textColor="@color/textColorDark"
+                  android:textSize="12sp"
+                  android:layout_marginTop="10dp"
+                  android:textAlignment="center"/>
+
+
+              <com.github.florent37.shapeofview.shapes.RoundRectView
+                  android:layout_width="148dp"
+                  android:layout_height="40dp"
+                  app:shape_roundRect_bottomLeftRadius="8dp"
+                  app:shape_roundRect_topLeftRadius="8dp"
+                  app:shape_roundRect_topRightRadius="8dp"
+                  app:shape_roundRect_bottomRightRadius="8dp"
+                  app:shape_roundRect_borderWidth="1dp"
+                  app:shape_roundRect_borderColor="@color/danger_notify"
+                  >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alert"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/danger_notify"
+                        />
+                </RelativeLayout>
+
+
+              </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+              <TextView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="or in case of any emergency"
+                  android:textColor="@color/textColorDark"
+                  android:textSize="12sp"
+                  android:layout_marginTop="10dp"
+                  android:textAlignment="center"/>
+              <com.github.florent37.shapeofview.shapes.RoundRectView
+                  android:layout_width="148dp"
+                  android:layout_height="40dp"
+                  app:shape_roundRect_bottomLeftRadius="8dp"
+                  app:shape_roundRect_topLeftRadius="8dp"
+                  app:shape_roundRect_topRightRadius="8dp"
+                  app:shape_roundRect_bottomRightRadius="8dp"
+                  >
+
+                  <RelativeLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:background="@color/danger_notify">
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="Call 112"
+                          android:drawableStart="@drawable/ic_phone"
+                          android:drawablePadding="5dp"
+                          android:textSize="14sp"
+                          android:fontFamily="@font/poppins_bold"
+                          android:layout_centerInParent="true"
+                          android:textColor="@color/colorMaterialWhite"
+                          />
+                  </RelativeLayout>
+
+
+              </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+          </LinearLayout>
+
+      </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+      <RelativeLayout
+          android:id="@+id/overlay_loader"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:visibility="visible"
+          android:background="@color/overlay_light_60">
+
+
+          <ProgressBar
+              android:id="@+id/lyt_progress"
+              style="@style/Widget.AppCompat.ProgressBar"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_centerInParent="true"
+              android:indeterminate="true" />
+
+          <TextView
+              android:id="@+id/loading_text"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Loading Bids..."
+              android:fontFamily="@font/montserrat"
+              android:layout_below="@id/lyt_progress"
+              android:textAlignment="center"
+              android:padding="15dp"
+              android:textColor="@color/colorMaterialDark"
+              android:textSize="16sp"/>
+
+
+      </RelativeLayout>
+
+
+  </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:id="@+id/top_nav_menu"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:shape_roundRect_bottomLeftRadius="10dp"
+        app:shape_roundRect_bottomRightRadius="10dp"
+        app:shape_roundRect_topLeftRadius="10dp"
+        app:shape_roundRect_topRightRadius="10dp"
+        android:layout_gravity="end|center_horizontal"
+        android:visibility="gone"
+        android:layout_marginEnd="16dp"
+        android:elevation="1dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorMaterialWhite"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/menu_edit_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    app:shape_roundRect_bottomLeftRadius="10dp"
+                    app:shape_roundRect_bottomRightRadius="10dp"
+                    app:shape_roundRect_topLeftRadius="10dp"
+                    app:shape_roundRect_topRightRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/notify_info_bg">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_add_white_24dp"
+                            android:padding="4dp"/>
+
+
+                    </RelativeLayout>
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColorDark"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/menu_delete_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    app:shape_roundRect_bottomLeftRadius="10dp"
+                    app:shape_roundRect_bottomRightRadius="10dp"
+                    app:shape_roundRect_topLeftRadius="10dp"
+                    app:shape_roundRect_topRightRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/notify_danger_bg">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_trash_2"
+                            app:tint="@color/danger_notify"
+                            android:padding="4dp"/>
+
+
+                    </RelativeLayout>
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColorDark"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/menu_timeline_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    app:shape_roundRect_bottomLeftRadius="10dp"
+                    app:shape_roundRect_bottomRightRadius="10dp"
+                    app:shape_roundRect_topLeftRadius="10dp"
+                    app:shape_roundRect_topRightRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/notify_warning_bg">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_add_white_24dp"
+                            app:tint="@color/warning_notify"
+                            android:padding="4dp"/>
+
+
+                    </RelativeLayout>
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Timeline"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColorDark"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/menu_share_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    app:shape_roundRect_bottomLeftRadius="10dp"
+                    app:shape_roundRect_bottomRightRadius="10dp"
+                    app:shape_roundRect_topLeftRadius="10dp"
+                    app:shape_roundRect_topRightRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/notify_success_bg">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_share_2"
+                            app:tint="@color/success_notify"
+                            android:padding="4dp"/>
+
+
+                    </RelativeLayout>
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Share"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColorDark"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/menu_support_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    app:shape_roundRect_bottomLeftRadius="10dp"
+                    app:shape_roundRect_bottomRightRadius="10dp"
+                    app:shape_roundRect_topLeftRadius="10dp"
+                    app:shape_roundRect_topRightRadius="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/notify_info_bg">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_help_circle"
+                            app:tint="@color/info_notify"
+                            android:padding="4dp"/>
+
+
+                    </RelativeLayout>
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Support"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColorDark"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

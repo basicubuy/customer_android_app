@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="bottom"
+    android:background="@color/grey_5"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_large">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/spacing_middle"
+            android:layout_marginTop="@dimen/spacing_middle"
+            android:text="Update Task"
+            android:fontFamily="@font/montserrat_bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/grey_90" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/bt_close"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:tint="@color/receiving_color"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_mark_complete"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_corner_primary"
+            android:textColor="@color/colorMaterialWhite"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="13sp"
+            android:text="Mark Complete" />
+
+        <Button
+            android:id="@+id/btn_pause_task"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_corner_pause"
+            android:textColor="@color/expired_color"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="13sp"
+            android:elevation="@dimen/spacing_medium"
+            android:textAllCaps="false"
+            android:text="Pause Task" />
+    </LinearLayout>
+
+</LinearLayout>

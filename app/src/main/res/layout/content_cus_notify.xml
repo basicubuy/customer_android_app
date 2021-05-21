@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/rootLayout"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:clipToPadding="false">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:background="@color/colorMaterialWhite"
+        app:cardElevation="1dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="28dp"
+            android:paddingEnd="28dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            >
+
+            <com.github.florent37.shapeofview.shapes.CircleView
+                android:layout_width="44dp"
+                android:layout_height="44dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/notify_warning_bg"
+                    android:padding="10dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_shield"/>
+
+                </RelativeLayout>
+            </com.github.florent37.shapeofview.shapes.CircleView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/notify_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum dummy text here nothing much in this word is ment to appear but you see i like to break things that s"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:textColor="@color/textColorDark"/>
+
+                <TextView
+                    android:id="@+id/notify_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Verify your account"
+                    android:layout_gravity="end"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/textColorDark"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cardElevation="2dp"-->
+<!--        app:cardBackgroundColor="@color/colorMaterialWhite"-->
+<!--        app:cardCornerRadius="12dp"-->
+<!--     >-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:paddingStart="22dp"-->
+<!--            android:paddingEnd="10dp"-->
+<!--            android:paddingTop="15dp"-->
+<!--            android:paddingBottom="15dp">-->
+
+
+<!--       <RelativeLayout-->
+<!--           android:layout_width="match_parent"-->
+<!--           android:layout_height="wrap_content">-->
+
+
+<!--           <TextView-->
+<!--               android:id="@+id/notify_msg"-->
+<!--               android:layout_width="wrap_content"-->
+<!--               android:layout_height="wrap_content"-->
+<!--               android:fontFamily="@font/poppins_medium"-->
+<!--               android:paddingStart="10dp"-->
+<!--               android:textColor="@color/colorMaterialDark"-->
+<!--               android:text="James Blunt sent a bid for web design task"/>-->
+
+<!--           <TextView-->
+<!--               android:id="@+id/notify_date"-->
+<!--               android:layout_width="wrap_content"-->
+<!--               android:layout_height="wrap_content"-->
+<!--               android:fontFamily="@font/poppins_medium"-->
+<!--               android:paddingStart="10dp"-->
+<!--               android:layout_alignEnd="@id/notify_msg"-->
+<!--               android:textSize="12sp"-->
+<!--               android:layout_below="@id/notify_msg"-->
+<!--               android:textColor="@color/colorMaterialDark"-->
+<!--               android:text="1 Minute ago"/>-->
+<!--       </RelativeLayout>-->
+
+
+<!--        </LinearLayout>-->
+<!--    </com.google.android.material.card.MaterialCardView>-->
+
+
+</LinearLayout>

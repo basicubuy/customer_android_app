@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/rootLayout"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false">
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:layout_margin="5dp"
+        app:shape_roundRect_bottomLeftRadius="10dp"
+        app:shape_roundRect_bottomRightRadius="10dp"
+        app:shape_roundRect_topLeftRadius="10dp"
+        app:shape_roundRect_topRightRadius="10dp"
+     >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:background="@color/colorMaterialWhite"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/project_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        android:maxLines="2"
+                        android:text="Makeup Artists"/>
+
+
+
+                    <TextView
+                        android:id="@+id/bid_count_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins"
+                            android:maxLines="1"
+                            android:text="10 bids recieved"
+                            android:textColor="@color/textColor_alt"
+                            android:layout_marginTop="4dp"
+                            android:textSize="10sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/bidder_avater_showcase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start">
+
+                        <com.mikhaellopez.circularimageview.CircularImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_gravity="start"
+                            android:id="@+id/bidder_image_1"
+                            android:scaleType="centerCrop"
+                            app:civ_border_width="2dp"
+                            />
+
+                        <com.mikhaellopez.circularimageview.CircularImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_marginStart="-20dp"
+                            android:layout_gravity="start"
+                            app:civ_border_width="2dp"
+                            android:scaleType="centerCrop"
+                            android:layout_toRightOf="@id/bidder_image_1"
+                            android:id="@+id/bidder_image_2"
+                          />
+
+                        <com.mikhaellopez.circularimageview.CircularImageView
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_marginStart="50dp"
+                            android:layout_gravity="start"
+                            android:id="@+id/bidder_image_3"
+                            android:scaleType="centerCrop"
+                            app:civ_border_width="2dp"
+                             />
+
+                        <com.github.florent37.shapeofview.shapes.CircleView
+                            android:id="@+id/bid_count_holder"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginStart="-15dp"
+                            android:visibility="gone"
+                            android:layout_toRightOf="@id/bidder_image_3"
+                            android:layout_gravity="start"
+                            >
+
+                            <TextView
+                                android:id="@+id/left_bid_counts"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:background="@drawable/notify_info_bg"
+                                android:gravity="center"
+                                android:textColor="@android:color/white"
+                                android:textSize="14sp"/>
+
+                        </com.github.florent37.shapeofview.shapes.CircleView>
+
+
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/msg_notify"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_message_circle"
+                            app:tint="@color/textColor"/>
+
+                        <com.mikhaellopez.circularimageview.CircularImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:tint="@color/expired_color"
+                            android:src="@drawable/status_circle"
+                            android:layout_alignEnd="@id/msg_notify"
+                            app:civ_border="false"/>
+
+                    </RelativeLayout>
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+
+                    <com.github.florent37.shapeofview.shapes.RoundRectView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        app:shape_roundRect_topLeftRadius="10dp"
+                        app:shape_roundRect_topRightRadius="10dp"
+                        app:shape_roundRect_bottomLeftRadius="10dp"
+                        app:shape_roundRect_bottomRightRadius="10dp"
+                        android:layout_marginBottom="20dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/notify_info_bg">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ic_arrow_forward_black_24dp"
+                                app:tint="@color/info_notify"
+                                android:padding="3dp"/>
+                        </RelativeLayout>
+                    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+</LinearLayout>

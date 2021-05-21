@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.pchmn:MaterialChipsInput:1.0.5@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1c3184699388bc17f397b1aeccc7ff4/jetified-MaterialChipsInput-1.0.5/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1c3184699388bc17f397b1aeccc7ff4/jetified-MaterialChipsInput-1.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f1c3184699388bc17f397b1aeccc7ff4/jetified-MaterialChipsInput-1.0.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c771cb2155ca531fccb16bf759df57bf/jetified-MaterialChipsInput-1.0.5/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c771cb2155ca531fccb16bf759df57bf/jetified-MaterialChipsInput-1.0.5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c771cb2155ca531fccb16bf759df57bf/jetified-MaterialChipsInput-1.0.5/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/22024241f800b4a01488df626cbe3559/jetified-MaterialChipsInput-1.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/22024241f800b4a01488df626cbe3559/jetified-MaterialChipsInput-1.0.5/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/22024241f800b4a01488df626cbe3559/jetified-MaterialChipsInput-1.0.5/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.pchmn/MaterialChipsInput/1.0.5/519597e2661c4b5fc5dbd59fd417cbede4a75543/MaterialChipsInput-1.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

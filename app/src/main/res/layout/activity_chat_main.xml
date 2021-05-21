@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorMaterialWhite"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:expandedTitleMarginBottom="20dp"
+                app:expandedTitleMarginEnd="64dp"
+                app:expandedTitleMarginStart="15dp"
+               >
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:gravity="bottom"
+                    android:background="@android:color/white"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:theme="@style/Toolbar.Light"  />
+
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:gravity="center_vertical"
+                  android:orientation="horizontal">
+                  <RelativeLayout
+                      android:layout_width="36dp"
+                      android:layout_height="36dp"
+                      android:layout_marginEnd="40dp">
+
+                      <com.mikhaellopez.circularimageview.CircularImageView
+                          android:id="@+id/pro_image"
+                          android:layout_width="36dp"
+                          android:layout_height="36dp"
+                          app:srcCompat="@drawable/fake_user_image"
+                          app:civ_border_width="2dp"/>
+
+                      <com.mikhaellopez.circularimageview.CircularImageView
+                          android:id="@+id/bidder_online_status"
+                          android:layout_width="10dp"
+                          android:layout_height="10dp"
+                          android:tint="@color/done_color"
+                          android:layout_alignParentBottom="true"
+                          android:layout_alignParentRight="true"
+                          android:src="@drawable/status_circle"
+                          android:layout_marginBottom="5dp"
+                          app:civ_border_width="1dp"
+                          app:civ_border="true"/>
+
+                  </RelativeLayout>
+                  <LinearLayout
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:gravity="start">
+                      <TextView
+                          android:id="@+id/pro_name"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:text="Andrew Richard"
+                          android:fontFamily="@font/poppins_semibold"
+                          android:textColor="@color/textColorDark_alt"
+                          android:textSize="14sp"
+                          />
+                      <TextView
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:text="Last seen 12hrs ago"
+                          android:fontFamily="@font/poppins_semibold"
+                          android:textColor="@color/textColor"
+                          android:textSize="10sp"
+                          />
+                  </LinearLayout>
+              </LinearLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+        <com.github.florent37.shapeofview.shapes.RoundRectView
+            android:id="@+id/chat_agreement_sh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_below="@id/app_bar_layout"
+            app:shape_roundRect_bottomLeftRadius="10dp"
+            app:shape_roundRect_bottomRightRadius="10dp"
+            app:shape_roundRect_topLeftRadius="10dp"
+            app:shape_roundRect_topRightRadius="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="22dp"
+                android:background="@color/input_field"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ubuy_mission"
+                    android:textColor="@color/textColorDark_alt"
+                    android:textSize="12sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+
+
+                    <com.github.florent37.shapeofview.shapes.RoundRectView
+                        android:id="@+id/accept_sh"
+                        android:layout_width="101dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:elevation="1dp"
+                        app:shape_roundRect_topLeftRadius="15dp"
+                        app:shape_roundRect_topRightRadius="15dp"
+                        app:shape_roundRect_bottomLeftRadius="15dp"
+                        app:shape_roundRect_bottomRightRadius="15dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Accept"
+                            android:gravity="center"
+                            android:background="@color/success_notify"
+                            android:textColor="@color/colorMaterialWhite"
+                            android:fontFamily="@font/poppins_semibold"
+                            />
+
+                    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                    <com.github.florent37.shapeofview.shapes.RoundRectView
+                        android:id="@+id/disagree_sh"
+                        android:layout_width="101dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:elevation="1dp"
+                        android:layout_marginStart="20dp"
+                        app:shape_roundRect_topLeftRadius="15dp"
+                        app:shape_roundRect_topRightRadius="15dp"
+                        app:shape_roundRect_bottomLeftRadius="15dp"
+                        app:shape_roundRect_bottomRightRadius="15dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Decline"
+                            android:textAllCaps="false"
+                            android:background="@color/danger_notify"
+                            android:textColor="@color/colorMaterialWhite"
+                            android:gravity="center"
+                            android:fontFamily="@font/poppins_semibold"
+                            />
+
+                    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+        <LinearLayout
+            android:id="@+id/chat_body"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="30dp"
+            android:visibility="visible"
+
+            android:layout_below="@id/app_bar_layout">
+
+          <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/chat_rv"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_marginBottom="60dp"
+              />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/disabled_chat_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                app:shape_roundRect_bottomLeftRadius="18dp"
+                app:shape_roundRect_bottomRightRadius="18dp"
+                app:shape_roundRect_topLeftRadius="18dp"
+                app:shape_roundRect_topRightRadius="18dp"
+                app:shape_roundRect_borderWidth="1dp"
+                app:shape_roundRect_borderColor="@color/disabledChat"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@color/colorMaterialWhite"
+                    android:gravity="center_horizontal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="Type a message"
+                        android:textSize="12sp"
+                        android:editable="false"
+                        android:textColorHint="@color/disabledChat"
+                        android:fontFamily="@font/poppins_medium"
+                        android:paddingStart="20dp"
+                        android:background="@android:color/transparent"
+                        android:outlineProvider="none"
+                        />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fabCustomSize="40dp"
+                        app:backgroundTint="@color/colorMaterialWhite"
+                        android:layout_gravity="end"
+                        android:src="@drawable/ic_folder_plus"
+                        android:layout_marginRight="11dp"
+                        android:tint="@color/disabledChat"/>
+
+                </LinearLayout>
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabCustomSize="36dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:backgroundTint="@color/disabledChat"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_send"
+                android:tint="@color/colorMaterialWhite"/>
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/accepted_chat_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:gravity="center_horizontal">
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                app:shape_roundRect_bottomLeftRadius="18dp"
+                app:shape_roundRect_bottomRightRadius="18dp"
+                app:shape_roundRect_topLeftRadius="18dp"
+                app:shape_roundRect_topRightRadius="18dp"
+                app:shape_roundRect_borderWidth="1dp"
+                app:shape_roundRect_borderColor="@color/colorPrimary"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@color/colorMaterialWhite"
+                    android:gravity="center_horizontal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/msg_input"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="Type a message"
+                        android:textSize="12sp"
+                        android:textColorHint="@color/textColorDark_alt"
+                        android:fontFamily="@font/poppins_medium"
+                        android:paddingStart="20dp"
+                        android:background="@android:color/transparent"
+                        android:outlineProvider="none"
+                        />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fab_files"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:fabCustomSize="40dp"
+                        app:backgroundTint="@color/colorMaterialWhite"
+                        android:layout_gravity="end"
+                        android:src="@drawable/ic_folder_plus"
+                        android:layout_marginRight="11dp"
+                        android:tint="@color/colorPrimary"/>
+
+                </LinearLayout>
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabCustomSize="36dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="10dp"
+                app:backgroundTint="@color/colorPrimary"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_send"
+                android:tint="@color/colorMaterialWhite"/>
+
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

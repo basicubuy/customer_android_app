@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#119ae2</color>
+    <color name="colorPrimaryDark">#119ae2</color>
+    <color name="colorAccent">#119ae2</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="placeholder_bg">#dddddd</color>
+    <color name="activity_bg">#f3f3f3</color>
+    <color name="input_field">#e5e5e5</color>
+    <!--  home color codes  -->
+    <color name="home_color1">#CFEBF9</color>
+    <color name="home_color2">#CFF9D8</color>
+    <color name="home_color3">#F9CFE3</color>
+    <color name="home_color4">#F8F9CF</color>
+    <color name="home_color5">#F9F9FA</color>
+    <!--notification icons-->
+    <color name="warning_notify">#FFBC1F</color>
+    <color name="danger_notify">#FB4E4E</color>
+    <color name="info_notify">#119ae2</color>
+    <color name="success_notify">#1ab759</color>
+    <!--gradient-->
+    <color name="gradient_1">#21B0F6</color>
+    <color name="gradient_2">#006DA6</color>
+    <!--auth_colors-->
+    <color name="facebook_bg">#1877F2</color>
+    <!--auth colors ends here-->
+    <!--status_colors-->
+    <color name="hint_color">#A0A4A8</color>
+    <color name="reviewed_color">#F6A609</color>
+    <color name="receiving_color">#4F61FC</color>
+    <color name="done_color">#46D784</color>
+    <color name="expired_color">#E65E97</color>
+    <color name="breaker">#A0A4A8</color>
+    <color name="reject_color">#FF5354</color>
+    <color name="waiting_color">#F6A609</color>
+    <color name="not_saved">#A0A4A8</color>
+    <color name="error_form">#FF6262</color>
+    <color name="error_form_filled">#0DFF6262</color>
+    <!--status colors ends here-->
+    <color name="colorMaterialDark">#212121</color>
+    <color name="textColor">#A0A4A8</color>
+    <color name="textColor_alt">#707683</color>
+    <color name="textColorDark">#52575C</color>
+    <color name="rewardTextColor">#D08230</color>
+    <color name="ratingColor">#ECD123</color>
+    <color name="textColorDark_alt">#25282b</color>
+    <color name="progress_bg">#CACCCF</color>
+    <color name="progress_tracker_bg">#119AE2</color>
+    <color name="colorMaterialWhite">#ffffff</color>
+    <color name="colorTransWhite">#00FFFFFF</color>
+    <color name="disabledChat">#CACCCF</color>
+    <!--chat colors-->
+    <color name="mainchat_bg">#F2F4F8</color>
+    <color name="activity8fontGray">#bebebe</color>
+    <!--extras-->
+    <color name="colorbg">#FCF5EF</color>
+    <color name="chat_ex_bg">#F0F8FF</color>
+    <color name="chat_ex_color">#008000</color>
+    <color name="color_bg1">#F9D0B5</color>
+    <color name="color_bg2">#EF6E45</color>
+    <color name="color_bg3">#3361C2</color>
+    <color name="basilPrimary">#fffde7</color>
+    <color name="basilPrimaryDark">#fff3e0</color>
+    <color name="basilAccent">#d84315</color>
+    <color name="basilTextPrimary">#37474f</color>
+    <color name="basilTextSecondary">#43a047</color>
+    <color name="basilTextAccent">#c8e6c9</color>
+    <color name="greenAccent">#69f0ae</color>
+
+
+    <!-- Insta Colors -->
+    <color name="instaPrimary">#ffffff</color>
+    <color name="instaDark">#e0e0e0</color>
+    <color name="instaAccent">#42a5f5</color>
+
+    <!-- Other Colors -->
+    <color name="fontColor">#616161</color>
+    <color name="fontColor2">#616161</color>
+    <color name="fontColorLight">#A0A4A8</color>
+    <color name="light500">#FF9E9E9E</color>
+    <color name="custom">#546e7a</color>
+    <color name="red">#f44336</color>
+    <color name="green">#7fb546</color>
+    <color name="transparent">#00000000</color>
+    <color name="lightgrey">#FFE0E0E0</color>
+    <color name="light200">#FFEEEEEE</color>
+    <color name="light100">#FFF5F5F5</color>
+    <color name="darkBlue">#1976d2</color> <!-- 700 -->
+    <color name="materialBlue">#448aff</color>  <!-- 200 -->
+    <color name="materialBlue900">#2979ff</color> <!-- 400 -->
+    <color name="blueTransparent">#28448aff</color>
+    <color name="blueAccent">#536dfe</color>
+    <color name="blue">#8c9eff</color>
+    <color name="amber">#FFFFAB00</color>
+    <color name="amber_trans">#32FFAB00</color>
+    <color name="dark">#FFE0E0E0</color>
+    <color name="indigo_blue">#FF1A237E</color>
+    <color name="indigo700">#FF303F9F</color>
+    <color name="colorGrey">#c2c2c2</color>
+    <color name="gra1">#FF416C</color>
+    <color name="gra2">#FF4B2B</color>
+    <color name="gra3">#ffdde1</color>
+    <color name="light_amount">#fff0f6</color>
+    <color name="blue_grey_800">#37474F</color>
+    <color name="text_amount">#ff2684</color>
+
+    <color name="overlay_dark_10">#1A000000</color>
+    <color name="overlay_dark_20">#33000000</color>
+    <color name="overlay_dark_30">#4D000000</color>
+    <color name="overlay_dark_40">#66000000</color>
+    <color name="overlay_dark_50">#80000000</color>
+    <color name="overlay_dark_60">#99000000</color>
+    <color name="overlay_dark_70">#B3000000</color>
+    <color name="overlay_dark_80">#CC000000</color>
+    <color name="overlay_dark_90">#E6000000</color>
+
+    <color name="overlay_light_10">#1AFFFFFF</color>
+    <color name="overlay_light_20">#33FFFFFF</color>
+    <color name="overlay_light_30">#4DFFFFFF</color>
+    <color name="overlay_light_40">#66FFFFFF</color>
+    <color name="overlay_light_50">#8FFFFFF0</color>
+    <color name="overlay_light_60">#99FFFFFF</color>
+    <color name="overlay_light_70">#B3FFFFFF</color>
+    <color name="overlay_light_80">#CCFFFFFF</color>
+    <color name="overlay_light_90">#E6FFFFFF</color>
+    <color name="grey_3">#f7f7f7</color>
+    <color name="grey_5">#f2f2f2</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_90">#263238</color>
+    <color name="duskYellow">#EF6C00</color>
+
+
+    <color name="light_blue_50">#E1F5FE</color>
+    <color name="light_blue_100">#B3E5FC</color>
+    <color name="light_blue_200">#81D4FA</color>
+    <color name="light_blue_300">#4FC3F7</color>
+    <color name="light_blue_400">#29B6F6</color>
+    <color name="light_blue_500">#03A9F4</color>
+    <color name="light_blue_600">#039BE5</color>
+    <color name="light_blue_700">#0288D1</color>
+    <color name="light_blue_800">#0277BD</color>
+    <color name="light_blue_900">#01579B</color>
+    <color name="light_blue_A100">#80D8FF</color>
+    <color name="light_blue_A200">#40C4FF</color>
+    <color name="light_blue_A400">#00B0FF</color>
+    <color name="light_blue_A700">#0091EA</color>
+    <color name="indigo_900">#1A237E</color>
+
+</resources>

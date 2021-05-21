@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="200dp"
+    android:id="@+id/rootLayout"
+    android:layout_margin="10dp"
+    android:layout_height="130dp">
+
+        <com.github.florent37.shapeofview.shapes.RoundRectView
+            android:id="@+id/pro_image_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            app:shape_roundRect_bottomRightRadius="10dp"
+            app:shape_roundRect_bottomLeftRadius="10dp"
+            app:shape_roundRect_topLeftRadius="10dp"
+            app:shape_roundRect_topRightRadius="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                android:orientation="vertical">
+                <!--First Row-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/topimage"/>
+                </LinearLayout>
+                <!--Second Row-->
+                <LinearLayout
+                    android:background="@android:color/holo_blue_dark"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:orientation="horizontal"
+                        android:background="#F4F1F1">
+
+                        <LinearLayout
+                            android:layout_width="42dp"
+                            android:gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:layout_height="match_parent">
+<!--                            <com.mikhaellopez.circularimageview.CircularImageView-->
+<!--                                android:id="@+id/user_profile_img"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:src="@drawable/find_pro_wizard"-->
+<!--                                app:civ_border="false" />-->
+<!--                            <ImageView-->
+<!--                                android:id="@+id/user_profile_img"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:src="@drawable/find_pro_wizard"/>-->
+<!--                            <ImageView-->
+<!--                                android:id="@+id/user_profile_img"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:src="@drawable/find_pro_wizard"-->
+<!--                                android:background="@drawable/picture_outline"-->
+<!--                                android:scaleType="centerCrop"-->
+<!--                                />-->
+                            <com.github.florent37.shapeofview.shapes.RoundRectView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:shape_roundRect_bottomLeftRadius="10dp"
+                                app:shape_roundRect_topRightRadius="10dp"
+                                app:shape_roundRect_topLeftRadius="10dp"
+                                app:shape_roundRect_bottomRightRadius="10dp"
+                                >
+                                <ImageView
+                                    android:id="@+id/user_profile_img"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/find_pro_wizard"
+                                    />
+                            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                        </LinearLayout>
+
+                        <LinearLayout android:orientation="horizontal"
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent">
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center_vertical"
+                                android:layout_width="100dp">
+                                <TextView
+                                    android:id="@+id/user_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:layout_below="@id/user_profile_img"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    android:lines="1"
+                                    android:ellipsize="end"
+                                    android:text="Raymond"/>
+                                <TextView
+                                    android:id="@+id/service_name"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins"
+                                    android:layout_below="@id/user_name"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="8sp"
+                                    android:lines="1"
+                                    android:ellipsize="end"
+                                    android:text="Makeup Artists"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:layout_width="80dp">
+
+                                <RatingBar
+                                    android:id="@+id/rating"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="?android:attr/ratingBarStyleSmall"
+                                    android:numStars="5"
+                                    android:theme="@style/CustomRatingBar"
+                                    android:layout_gravity="center_vertical"
+                                    android:stepSize="0.1"
+                                    android:isIndicator="true" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                            <!--                        <ImageView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:src="@drawable/outline_star_border_24"/>-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="invisible"
+                            android:layout_below="@id/service_name"
+                            android:layout_marginTop="5dp">
+
+                            <TextView
+                                android:id="@+id/total_jobs"
+                                android:layout_width="0dp"
+                                android:visibility="invisible"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/poppins"
+                                android:layout_below="@id/user_name"
+                                android:textColor="@color/colorMaterialWhite"
+                                android:textSize="10sp"
+                                android:text="30 jobs completed"/>
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:visibility="invisible"
+                                android:layout_height="14dp"
+                                android:src="@drawable/ic_arrow_forward_black_24dp"
+                                app:tint="@color/colorMaterialWhite"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+</LinearLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/rootLayout"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false">
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/ripple_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/RippleStyleWhite"
+        android:clickable="true"
+        >
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardBackgroundColor="@color/colorMaterialWhite"
+        app:cardCornerRadius="5dp"
+     >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:tint="@color/done_color"
+                    android:src="@drawable/status_circle"
+                    android:layout_marginBottom="4dp"
+                    app:civ_border="false"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/done"
+                    android:textColor="@color/fontColor"
+                    android:textSize="10sp"
+                    card_view:ignore="SmallSp" />
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/project_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/colorMaterialDark"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:text="Makeup Artists"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="1dp">
+
+                <TextView
+                    android:id="@+id/project_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:maxLines="1"
+                    android:text="Posted: 25 Min Ago"
+                    android:textColor="@color/colorMaterialDark"
+                    android:textSize="12sp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        </LinearLayout>
+
+            <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/bid_count_card"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                app:cardCornerRadius="13dp"
+                app:cardBackgroundColor="@color/done_color">
+
+                <TextView
+                    android:id="@+id/bid_count_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="2"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:padding="1dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorMaterialWhite"/>
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+</LinearLayout>

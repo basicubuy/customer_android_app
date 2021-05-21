@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ubuyng.app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".AllProsActivity"></activity>
+        <activity android:name=".LoginRegister" /> <!-- <application -->
+        <!-- android:name=".MyApplication" -->
+        <!-- android:allowBackup="true" -->
+        <!-- android:icon="@mipmap/ic_launcher" -->
+        <!-- android:label="@string/app_name" -->
+        <!-- android:roundIcon="@mipmap/ic_launcher" -->
+        <!-- android:supportsRtl="true" -->
+        <!-- android:hardwareAccelerated="false" -->
+        <!-- android:largeHeap="true" -->
+        <!-- android:theme="@style/AppTheme"> -->
+        <activity android:name=".MyEntryScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ExperienceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignInActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CusIntroActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SearchActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".StepperWizardLight" />
+        <activity android:name=".ProjectActivity" />
+        <activity android:name=".ConfirmActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".mini.ProfileActivity" />
+        <activity android:name=".myAddressActivity" />
+        <activity android:name=".FavoriteActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".NavigationDrawer1" />
+        <activity android:name=".InboxActivity" />
+        <activity android:name=".SubmitTaskActivity" />
+        <activity android:name=".Chat.ChatterActivity" />
+        <activity android:name=".ProjectBidActivity" />
+        <activity android:name=".ProjectTimeline" />
+        <activity android:name=".SearchInToolbar" />
+        <activity android:name=".TaskerActivity" />
+        <activity android:name=".ForgetPassActivity" />
+        <activity android:name=".HTWActivity" />
+        <activity android:name=".RewardActivity" />
+        <activity android:name=".SingleCatActivity" />
+        <activity android:name=".TermsActivity" />
+        <activity android:name=".ContactUsActivity" />
+        <activity android:name=".InternetActivity" />
+        <activity android:name=".UpdateTaskActivity" />
+        <activity android:name=".ProProfile.SingleBidActivity" />
+        <activity android:name=".BidProfileActivity" />
+        <activity android:name=".RetroActivity" />
+        <activity android:name=".UserTypeProActivity" />
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".FeedbackActivity" />
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".UpayActivity" />
+        <activity android:name=".CouponActivity" />
+        <activity android:name=".BecomeProActivity" />
+        <activity android:name=".Chat.ImageActivity" />
+        <activity android:name=".Chat.FilesActivity" />
+        <activity android:name=".StepperActivity" />
+        <activity android:name=".UserOTPActivity" />
+        <activity android:name=".DebugActivity" />
+        <activity android:name=".NotificationActivity" />
+        <activity android:name=".PosterActivity" />
+        <activity android:name=".PaymentDebugActivity" />
+        <activity android:name=".SafetyToolKitActivity" />
+        <activity android:name=".Dispute.AddDisputeActivity" />
+        <activity android:name=".Dispute.DisputeResoulutionsActivity" />
+        <activity android:name=".ProjectBidInProgressActivity" />
+        <activity android:name=".Dispute.addDispute" />
+        <activity android:name=".Dispute.SingleDisputeActivity" />
+        <activity android:name=".ProProfile.ProfileActivity" />
+        <activity android:name=".Categories.SubCategoryProsActivity" />
+        <activity android:name=".Categories.AllCategoryActivity" />
+        <activity android:name=".mini.SettingsActivity" />
+        <activity android:name=".mini.UrewardActivity" />
+        <activity android:name=".mini.UpayActivity" />
+        <activity android:name=".mini.BecomeProActivity" /> <!-- <service -->
+        <!-- android:name=".java.MyFirebaseMessagingService" -->
+        <!-- android:exported="false"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.google.firebase.MESSAGING_EVENT" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
+        <!--
+ Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more.
+        -->
+        <!-- <meta-data -->
+        <!-- android:name="com.google.firebase.messaging.default_notification_icon" -->
+        <!-- android:resource="@mipimap/ic_launcher" /> -->
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBhol0N_wyb0oZqcKjaU7afqPRFMfz7X80" />
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/freshchat_file_provider_paths" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/overlay_dark_30">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/spacing_large">
+
+        <com.github.florent37.shapeofview.shapes.RoundRectView
+            android:layout_width="320dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/spacing_large"
+            android:layout_weight="1"
+            android:visibility="visible"
+            app:cardCornerRadius="6dp"
+            app:shape_roundRect_topLeftRadius="20dp"
+            app:shape_roundRect_topRightRadius="20dp"
+            app:shape_roundRect_bottomRightRadius="20dp"
+            app:shape_roundRect_bottomLeftRadius="20dp"
+            app:cardElevation="6dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorMaterialWhite">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/payment_successful"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_smlarge"
+                        android:gravity="center"
+                        android:text=" Payment Successful"
+                        android:textColor="@color/success_notify"
+                        android:textSize="24sp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_smlarge"
+                        android:gravity="center"
+                        android:text="Great your paymnent was successful \n and task has been funded"
+                        android:textColor="@color/textColorDark_alt"
+                        android:textSize="18sp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="46dp"
+                        >
+
+                      <com.github.florent37.shapeofview.shapes.RoundRectView
+                            android:id="@+id/continue_sh"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:elevation="1dp"
+                            app:shape_roundRect_topLeftRadius="15dp"
+                            app:shape_roundRect_topRightRadius="15dp"
+                            app:shape_roundRect_bottomLeftRadius="15dp"
+                            app:shape_roundRect_bottomRightRadius="15dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Continue"
+                                android:textAllCaps="false"
+                                android:background="@color/success_notify"
+                                android:textColor="@color/colorMaterialWhite"
+                                android:gravity="center"
+                                android:fontFamily="@font/poppins_semibold"
+                               />
+
+                        </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="27dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/breaker"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Or"
+                            android:textSize="16sp"
+                            android:textColor="@color/textColorDark_alt"/>
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/breaker"/>
+
+                    </LinearLayout>
+
+                    <com.github.florent37.shapeofview.shapes.RoundRectView
+                        android:layout_width="197dp"
+                        android:layout_height="30dp"
+                        app:shape_roundRect_borderWidth="1dp"
+                        app:shape_roundRect_borderColor="@color/success_notify"
+                        app:shape_roundRect_bottomLeftRadius="15dp"
+                        app:shape_roundRect_bottomRightRadius="15dp"
+                        app:shape_roundRect_topLeftRadius="15dp"
+                        app:shape_roundRect_topRightRadius="15dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Pay artisan yourself"
+                            android:textColor="@color/success_notify"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center"
+                            />
+
+                    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

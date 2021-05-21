@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">Ubuy NG</string>
+
+    <!--BOTTOM NAV HOME MENU-->
+    <string name="menu_post">Post A Task</string>
+    <string name="menu_project">Tasks</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_notify">Notification</string>
+    <string name="menu_inbox">Inbox</string>
+    <string name="menu_more">More</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_address">My address</string>
+    <string name="lorem_ipsum2">An verear theophrastus delicatissimi cum. In cum ancillae convenire. Est ne omnes causae corrumpit, eum duis sententiae necessitatibus te, mollis.</string>
+
+
+    <string name="accept_bid_terms">By clicking "accept " you agree to our Terms and Conditions</string>
+    <string name="favourite_remove">removed from MYSQL table</string>
+    <string name="favourite_add">Saved to MYSQL DB</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <!--SHARE INTENTS-->
+    <string name="share_msg">Hi, Are you looking for skilled professionals? </string>
+    <string name="share_pro_msg">Hi, checkout </string>
+    <string name="download_msg">Find nearby pros from Ubuy.ng, Download the app for free here.  </string>
+    <!--MORE STRINGS-->
+    <string name="about_note">This is a quick demo of how to save loaded data to mysql server \n If you would like an the backend api code send me an email at:</string>
+    <string name="ski_email">andrewbenrichard@gmail.com</string>
+    <string name="update_date">July 2019</string>
+    <string name="last_update">Last Build</string>
+    <string name="version_num">0.1</string>
+    <string name="version">Version</string>
+    <string name="find_nearby_pros">Find Pros</string>
+    <string name="join_as_pro">Join as Pro</string>
+    <string name="wizard_signin">Already on ubuy.ng? login</string>
+    <string name="cus_auth_sub_text">By tapping register via Facebook, register with Google, or Join with Email, you agree to Ubuy\'s</string>
+    <string name="privacy_policy"> Privacy Policy</string>
+    <string name="register_with_facebook">Register with Facebook</string>
+    <string name="step_of">Step %1$d of %2$d</string>
+
+    <!--facebook auth keys-->
+    <string name="facebook_app_id">836158506742418</string>
+    <string name="fb_login_protocol_scheme">fb836158506742418</string>
+
+    <!--GOOGLE APLI KEYS-->
+    <string name="google_map_api_key">AIzaSyBhol0N_wyb0oZqcKjaU7afqPRFMfz7X80</string>
+    <string name="server_client_id">455514505627-p58gh76n4q7a5r774q36vdlkl832q6em.apps.googleusercontent.com</string>
+    <!--FIREBASE-->
+    <string name="freshchat_file_provider_authority">com.ubuyng.app.provider</string>
+    <!--network -->
+    <string name="conne_msg1">Please Check your network and try again</string>
+    <string name="nodata">We coudn\'t find your account</string>
+    <string name="nodatapassword">We coudn\'t find your account, please register this email</string>
+    <string name="default_notification_channel_id">455514505627</string>
+
+
+    <string name="OK">OK</string>
+    <string name="GOT_IT">GOT IT</string>
+    <string name="YES">YES</string>
+    <string name="NO">NO</string>
+    <string name="SETTING">SETTING</string>
+    <string name="CANCEL">CANCEL</string>
+    <string name="CLOSE">CLOSE</string>
+    <string name="UPDATE">UPDATE</string>
+    <string name="DISMISS">DISMISS</string>
+    <string name="HIDE">HIDE</string>
+    <string name="RETRY">RETRY</string>
+    <string name="TRY_AGAIN">TRY AGAIN</string>
+    <string name="DETAILS">DETAILS</string>
+    <string name="FAILED">FAILED</string>
+    <string name="TYPE_SEARCH">SEARCH</string>
+    <string name="NO_IMAGE">NO IMAGE</string>
+    <string name="DELETE">DELETE</string>
+    <string name="DISCARD">DISCARD</string>
+    <string name="AGREE">AGREE</string>
+    <string name="DECLINE">DECLINE</string>
+    <string name="DISAGREE">DISAGREE</string>
+    <string name="OPEN">OPEN</string>
+    <string name="SAVE">SAVE</string>
+    <string name="NEXT">NEXT</string>
+    <string name="BACK">BACK</string>
+    <string name="SKIP">SKIP</string>
+    <string name="quick_ques_intrp">We\'re asking you a few questions so we can bring you the right pros.</string>
+    <string name="add_a_description">Add a description</string>
+    <string name="contact_us">Contact us</string>
+    <string name="customer_support">Customer support</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions and Privacy Policy]]></string>
+    <string name="ubuy_mission">To maintain platforms for professionals and skilled artisans within Nigeria that gives them utmost accessibility and visibility to their potential clients with just a few clicks</string>
+    <string name="menu_refer">Refer a friend</string>
+    <string name="no_inbox_tips">Starting a new project usually resolve this.</string>
+    <string name="no_message_here">No Message here</string>
+
+
+    <!--SEARCH CAT TAB-->
+    <string name="cat_home">Home </string>
+    <string name="cat_events">Events </string>
+    <string name="cat_repair">Repair </string>
+    <string name="cat_business">Business</string>
+    <string name="cat_web_design"><![CDATA[Web]]></string>
+
+    <!--dependencies-->
+    <string name="map_key_api">AIzaSyBhol0N_wyb0oZqcKjaU7afqPRFMfz7X80</string>
+    <string name="my_tasks">My Tasks</string>
+    <string name="completed_tasks">Completed Tasks</string>
+    <string name="expired_tasks">Expired Tasks</string>
+    <string name="awaiting_bids">Awaiting Bids</string>
+    <string name="receiving_bids">Receiving Bids</string>
+    <string name="done">Done</string>
+    <string name="post_task">Post Task</string>
+    <string name="project_date_holder">Posted</string>
+    <string name="details">Details</string>
+    <string name="confirm_bid_decline">Are you sure you want to decline this offer, You can always open this bid at any time.</string>
+    <string name="decline_bid">Decline Bid</string>
+    <string name="demo_address">Abuja, Nigeria</string>
+    <string name="hire_pro">Hire Pro</string>
+    <string name="badges">Badges</string>
+    <string name="my_services">My Services</string>
+    <string name="reviews">Reviews</string>
+    <string name="gallery">Gallery</string>
+
+    <string name="registerpro_toast">Install the customer app to hire skilled artisans and freelancers in Nigeria</string>
+    <string name="naira">₦</string>
+    <string name="review_payment"><![CDATA[Review & Payment]]></string>
+
+    <string name="uploadImages">Set your image</string>
+    <string name="hello">Hello, </string>
+    <string name="top_pros_artisans"><![CDATA[Top Digital Pros & Artisans]]></string>
+    <string name="skills_expertise"><![CDATA[Skills & Expertise]]></string>
+    <string name="skills_experties"><![CDATA[Skills & Experties]]></string>
+    <string name="submit">Submit</string>
+
+</resources>

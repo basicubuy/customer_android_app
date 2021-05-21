@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/bt_close"
+                            android:layout_width="?attr/actionBarSize"
+                            android:layout_height="35dp"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:tint="@color/colorMaterialWhite"
+                            app:srcCompat="@drawable/ic_close" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tip_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="What's your location?"
+                        android:layout_below="@id/toolbar"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColor="@color/colorMaterialWhite"
+                        />
+                    <androidx.cardview.widget.CardView
+                        android:layout_below="@+id/tip_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/colorMaterialWhite"
+                        android:padding="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="15dp"
+                        app:cardCornerRadius="5dp"
+                        >
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="5dp"
+                            app:cardBackgroundColor="@color/colorMaterialWhite">
+
+                            <fragment android:id="@+id/autocomplete_fragment"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                                />
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+            <!--        <com.google.android.material.tabs.TabLayout-->
+            <!--            android:id="@+id/tab_layout"-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="?attr/actionBarSize"-->
+            <!--            app:tabGravity="fill"-->
+            <!--            app:tabIndicatorColor="@color/colorMaterialWhite"-->
+            <!--            app:tabIndicatorHeight="3dp"-->
+            <!--            app:tabMode="fixed"-->
+            <!--            android:layout_below="@id/relative_list"-->
+            <!--            app:tabSelectedTextColor="@color/colorMaterialWhite"-->
+            <!--            app:tabTextAppearance="@style/TextAppearance.Subhead.Bold"-->
+            <!--            app:tabTextColor="@color/grey_60" />-->
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/add_project"/>
+
+            <TextView
+                android:id="@+id/location_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textSize="23sp"
+                android:textColor="@color/colorMaterialDark"
+                android:fontFamily="@font/montserrat"/>
+
+            <TextView
+                android:id="@+id/warning_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:visibility="gone"
+                android:layout_marginTop="20dp"
+                android:text="Please enter you location using the search above"
+                android:textSize="16sp"
+                android:textColor="@color/red"
+                android:fontFamily="@font/montserrat"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/enter_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_corner"
+        android:backgroundTint="@color/colorMaterialDark"
+        android:drawableEnd="@drawable/ic_chevron_right"
+        android:drawablePadding="12dp"
+        android:elevation="16dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="20dp"
+        android:text="Find verified Pros"
+        android:layout_marginBottom="80dp"
+        android:textAllCaps="false"
+        android:textColor="@color/instaPrimary"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_anchor="@+id/bab1"
+        app:layout_anchorGravity="center|top" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bab1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"
+        android:elevation="0dp">
+
+        <TextView
+            android:id="@+id/cat_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cat_home"
+            android:textAlignment="center"
+            android:textSize="23sp"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_briefcase"
+            android:drawableTint="@color/colorMaterialDark"
+            android:drawablePadding="10dp"
+            android:textColor="@color/colorMaterialDark"
+            android:fontFamily="@font/montserrat"/>
+    </androidx.cardview.widget.CardView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

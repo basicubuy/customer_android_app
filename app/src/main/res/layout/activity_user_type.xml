@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+       >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/signup_screen"
+            />
+
+        <TextView
+            android:id="@+id/user_type_header"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_height="wrap_content"
+            android:text="Help us improve your experience"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="25sp"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:textColor="@color/colorMaterialDark"/>
+
+        <TextView
+            android:id="@+id/user_type_subheader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="What are you looking for?"
+            android:fontFamily="@font/montserrat"
+            android:textSize="16sp"
+            android:layout_below="@id/user_type_header"
+            android:textAlignment="center"
+            android:textColor="@color/colorMaterialDark"/>
+
+        <Button
+            android:id="@+id/user_type_cus"
+            android:layout_width="233dp"
+            android:layout_height="53dp"
+            android:textColor="@color/colorMaterialDark"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_bold"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_marginTop="35dp"
+            android:padding="8dp"
+            android:layout_below="@id/user_type_subheader"
+            android:background="@drawable/btn_corner_blue"
+            android:text="Here to hire"/>
+
+        <Button
+            android:id="@+id/user_type_pro"
+            android:layout_width="185dp"
+            android:layout_height="53dp"
+            android:textColor="@color/colorMaterialWhite"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_bold"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"
+            android:layout_below="@id/user_type_cus"
+            android:background="@drawable/btn_corner_blue"
+            android:text="Looking for work"/>
+
+
+
+        <TextView
+            android:id="@+id/user_type_htw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="how it works?"
+            android:textAllCaps="true"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="12sp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/user_type_pro"
+            android:textAlignment="center"
+            android:textColor="@color/colorMaterialDark"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

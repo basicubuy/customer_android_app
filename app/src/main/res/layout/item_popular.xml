@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="230dp"
+    android:id="@+id/rootLayout"
+    android:layout_margin="10dp"
+    android:layout_height="120dp">
+
+
+
+
+        <com.github.florent37.shapeofview.shapes.RoundRectView
+            android:id="@+id/sub_image_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="3dp"
+            app:shape_roundRect_bottomRightRadius="10dp"
+            app:shape_roundRect_bottomLeftRadius="10dp"
+            app:shape_roundRect_topLeftRadius="10dp"
+            app:shape_roundRect_topRightRadius="10dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/sub_image_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/loading_placeholder"
+                android:scaleType="fitXY"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/shadow_overlay"
+                android:scaleType="fitXY"/>
+
+
+            <TextView
+                android:id="@+id/sub_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:text="Makeup Artists"/>
+
+        </RelativeLayout>
+        </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+</LinearLayout>

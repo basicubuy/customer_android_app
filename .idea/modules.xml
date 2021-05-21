@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/latest-android-app.iml" filepath="$PROJECT_DIR$/.idea/modules/latest-android-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/androidsaripaarmaster/latest-android-app.androidsaripaarmaster.iml" filepath="$PROJECT_DIR$/.idea/modules/androidsaripaarmaster/latest-android-app.androidsaripaarmaster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/latest-android-app.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/latest-android-app.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/httpclient/latest-android-app.httpclient.iml" filepath="$PROJECT_DIR$/.idea/modules/httpclient/latest-android-app.httpclient.iml" />
+    </modules>
+  </component>
+</project>

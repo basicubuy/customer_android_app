@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/overlay_dark_30">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/spacing_large">
+
+        <com.github.florent37.shapeofview.shapes.RoundRectView
+            android:layout_width="331dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/spacing_large"
+            android:layout_weight="1"
+            android:visibility="visible"
+            app:cardCornerRadius="6dp"
+            app:shape_roundRect_topLeftRadius="20dp"
+            app:shape_roundRect_topRightRadius="20dp"
+            app:shape_roundRect_bottomRightRadius="20dp"
+            app:shape_roundRect_bottomLeftRadius="20dp"
+            app:cardElevation="6dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorMaterialWhite">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_smlarge"
+                        android:gravity="center"
+                        android:text="Feedback"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/poppins_medium"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_smlarge"
+                        android:gravity="center"
+                        android:text="What do you think of our app?"
+                        android:textColor="@color/textColorDark"
+                        android:textSize="14sp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center">
+                            <ImageView
+                                android:id="@+id/rate1"
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:src="@drawable/angry2"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Very Poor"
+                                android:textSize="10sp"/>
+                        </LinearLayout>
+                       <LinearLayout
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:orientation="vertical"
+                           android:layout_marginTop="15dp"
+                           android:layout_marginStart="5dp"
+                           android:gravity="center">
+                           <ImageView
+                               android:id="@+id/rate2"
+                               android:layout_width="46dp"
+                               android:layout_height="46dp"
+                               android:src="@drawable/sarcastic2"
+                              />
+
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Bad"
+                                android:textSize="10sp"/>
+                       </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center">
+                            <ImageView
+                                android:id="@+id/rate3"
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:src="@drawable/neutra2"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Normal"
+                                 android:textSize="10sp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center">
+                            <ImageView
+                                android:id="@+id/rate4"
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:src="@drawable/smile2"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Good"
+                                 android:textSize="10sp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="5dp"
+                            android:gravity="center">
+                            <ImageView
+                                android:id="@+id/rate5"
+                                android:layout_width="46dp"
+                                android:layout_height="46dp"
+                                android:src="@drawable/wow2"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Excelent"
+                                android:textSize="10sp"/>
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_smlarge"
+                        android:gravity="center"
+                        android:text="What would you like to share with us?"
+                        android:textColor="@color/textColorDark"
+                        android:textSize="14sp"
+                        />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        android:background="@color/overlay_dark_10"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText_des"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:textAlignment="textStart"
+                            android:hint="Your thoughts"
+                            android:background="@drawable/edit_text_round_bg_outline"
+                            android:textColorHint="@color/input_field" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="46dp"
+                        >
+
+                        <com.github.florent37.shapeofview.shapes.RoundRectView
+                            android:id="@+id/cancel_sh"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:elevation="1dp"
+                            app:shape_roundRect_topLeftRadius="15dp"
+                            app:shape_roundRect_topRightRadius="15dp"
+                            app:shape_roundRect_bottomLeftRadius="15dp"
+                            app:shape_roundRect_bottomRightRadius="15dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Cancel"
+                                android:gravity="center"
+                                android:fontFamily="@font/poppins_semibold"
+                                />
+
+                        </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                        <com.github.florent37.shapeofview.shapes.RoundRectView
+                            android:id="@+id/continue_sh"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_weight="1"
+                            android:elevation="1dp"
+                            android:layout_marginStart="20dp"
+                            app:shape_roundRect_topLeftRadius="15dp"
+                            app:shape_roundRect_topRightRadius="15dp"
+                            app:shape_roundRect_bottomLeftRadius="15dp"
+                            app:shape_roundRect_bottomRightRadius="15dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="Submit"
+                                android:textAllCaps="false"
+                                android:background="@color/info_notify"
+                                android:textColor="@color/colorMaterialWhite"
+                                android:gravity="center"
+                                android:fontFamily="@font/poppins_semibold"
+                               />
+
+                        </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

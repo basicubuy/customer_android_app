@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_lyt"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:expandedTitleMarginBottom="20dp"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="15dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="bottom"
+                app:layout_collapseMode="pin"
+                android:background="@android:color/white"
+                app:contentInsetStartWithNavigation="0dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/Toolbar.Light"  />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Dispute Resolution"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/textColorDark"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:gravity="center"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/nested_scroller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:paddingBottom="40dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/cat_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cat_dispute_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Dispute Category"
+                    android:textColor="@color/textColorDark_alt" />
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:id="@+id/Cats_sh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cat_dispute_txt"
+                    android:padding="2dp"
+                    app:shape_roundRect_bottomLeftRadius="10dp"
+                    app:shape_roundRect_bottomRightRadius="10dp"
+                    app:shape_roundRect_topLeftRadius="10dp"
+                    app:shape_roundRect_topRightRadius="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/cat_li_lyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="15dp"
+                        android:background="@drawable/edit_text_select_bg_outline"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/select_cat_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select dispute category"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textColorDark_alt"
+                            android:textSize="11sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:id="@+id/select_cat_drop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_chevron_down" />
+
+                    </LinearLayout>
+
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                <TextView
+                    android:id="@+id/cat_error_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="Please select a category"
+                    android:drawablePadding="3dp"
+                    android:layout_marginTop="3dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/des_edit"
+                    android:textColor="@color/error_form"
+                    app:drawableStartCompat="@drawable/ic_info_validate"
+                    app:drawableTint="@color/error_form" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/task_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cat_lyt"
+                android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/task_dispute_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Related Task"
+                android:textColor="@color/textColorDark_alt" />
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/task_sh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                app:shape_roundRect_bottomLeftRadius="10dp"
+                app:shape_roundRect_bottomRightRadius="10dp"
+                app:shape_roundRect_topLeftRadius="10dp"
+                app:shape_roundRect_topRightRadius="10dp">
+
+                <LinearLayout
+                    android:id="@+id/task_li_lyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:padding="15dp"
+                    android:background="@drawable/edit_text_select_bg_outline"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/select_task_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select task related to this dispute"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/textColorDark_alt"
+                        android:textSize="11sp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/select_task_drop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_chevron_down" />
+
+                </LinearLayout>
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                <TextView
+                    android:id="@+id/task_error_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="Please select a task"
+                    android:drawablePadding="3dp"
+                    android:layout_marginTop="3dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/des_edit"
+                    android:textColor="@color/error_form"
+                    app:drawableStartCompat="@drawable/ic_info_validate"
+                    app:drawableTint="@color/error_form" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/details_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/task_lyt"
+                android:text="Details of your dispute"
+                android:textColor="@color/textColorDark_alt" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/des_edit"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="@dimen/spacing_middle"
+                android:layout_below="@id/details_txt"
+                android:background="@color/overlay_dark_10"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText_des"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:gravity="top"
+                    android:background="@drawable/edit_text_round_bg_outline"
+                    android:textColorHint="@color/input_field" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/dispute_error_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="Dispute details is required"
+                android:drawablePadding="3dp"
+                android:layout_marginTop="3dp"
+                android:visibility="gone"
+                android:layout_below="@id/des_edit"
+                android:textColor="@color/error_form"
+                app:drawableStartCompat="@drawable/ic_info_validate"
+                app:drawableTint="@color/error_form" />
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/send_sh"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:padding="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/dispute_error_txt"
+                android:layout_gravity="center_horizontal"
+                app:shape_roundRect_bottomLeftRadius="8dp"
+                app:shape_roundRect_bottomRightRadius="8dp"
+                app:shape_roundRect_topLeftRadius="8dp"
+                app:shape_roundRect_topRightRadius="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/submit"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorMaterialWhite"/>
+                </RelativeLayout>
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+<!-- todo:: breakers-->
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/cats_view_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@id/cat_lyt"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:elevation="2dp"
+                android:visibility="gone"
+                app:shape_roundRect_bottomLeftRadius="10dp"
+                app:shape_roundRect_bottomRightRadius="10dp"
+                app:shape_roundRect_topLeftRadius="10dp"
+                app:shape_roundRect_topRightRadius="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cats_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorMaterialWhite"
+                    android:elevation="2dp" />
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/task_view_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@id/task_lyt"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:elevation="2dp"
+                android:visibility="gone"
+                app:shape_roundRect_bottomLeftRadius="10dp"
+                app:shape_roundRect_bottomRightRadius="10dp"
+                app:shape_roundRect_topLeftRadius="10dp"
+                app:shape_roundRect_topRightRadius="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/tasks_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorMaterialWhite"
+                    android:elevation="2dp" />
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

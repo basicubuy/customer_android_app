@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lyt_choices"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    >
+    <CheckBox
+        android:id="@+id/choice_check_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choice"
+        android:textStyle="bold"
+        android:buttonTint="@color/colorPrimary"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        />
+
+    <RadioGroup
+        android:id="@+id/choice_radio_grp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="8dp"
+       />
+
+
+</LinearLayout>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_gravity="center"
+    android:background="@drawable/cus_auth_1_bg"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:layout_marginTop="60dp">
+
+        <TextView
+            android:id="@+id/head_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
+            android:text="Join UbuyNG"
+            android:textColor="@color/colorMaterialDark"
+            android:textSize="30sp"
+            />
+
+        <TextView
+            android:id="@+id/head_subtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textAlignment="center"
+            android:layout_below="@id/head_text"
+            android:padding="15dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/cus_auth_sub_text"
+            android:textColor="@color/colorMaterialDark"
+            android:textSize="16sp"
+            />
+
+        <RelativeLayout
+            android:id="@+id/terms_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_below="@id/head_subtext"
+            >
+            <TextView
+                android:id="@+id/head_terms_of_use"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:textAlignment="center"
+                android:text="Terms of use"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/not_used_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text=", "
+                android:layout_toRightOf="@+id/head_terms_of_use"
+                android:textColor="@color/colorMaterialDark"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/head_privacy_policy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/privacy_policy"
+                android:layout_toEndOf="@id/not_used_1"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:id="@+id/not_used_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
+                android:text=" and "
+                android:layout_toEndOf="@id/head_privacy_policy"
+                android:textColor="@color/colorMaterialDark"
+                android:textSize="16sp"
+                />
+
+        </RelativeLayout>
+            <TextView
+                android:id="@+id/head_comm_guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Community Guidelines"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/terms_lyt"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                />
+
+
+        <LinearLayout
+            android:id="@+id/oauth_btn_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_below="@id/head_comm_guide">
+
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/cus_facebook_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="15dp"
+                android:elevation="20dp"
+                android:fontFamily="@font/poppins"
+                android:paddingLeft="25dp"
+                android:textSize="18sp"
+                android:paddingTop="5dp"
+                android:paddingRight="25dp"
+                android:paddingBottom="10dp" />
+
+            <Button
+                android:id="@+id/cus_google_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/btn_auth_google"
+                android:elevation="20dp"
+                android:fontFamily="@font/poppins"
+                android:paddingLeft="25dp"
+                android:drawableStart="@drawable/ic_google_auth_logo"
+                android:paddingTop="5dp"
+                android:paddingRight="25dp"
+                android:paddingBottom="10dp"
+                android:singleLine="true"
+                android:text="Register with Google"
+                android:textAllCaps="false"
+                android:textColor="@color/colorMaterialDark"
+                android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/pro_join_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/oauth_btn_lyt"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/btn_corner_white"
+            android:elevation="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:singleLine="true"
+            android:textAllCaps="false"
+            android:text="Join with Email"
+            android:textColor="@color/colorMaterialDark"
+            android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/signin_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
+                android:text="Already Registered?"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

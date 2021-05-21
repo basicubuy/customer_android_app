@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="false"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorMaterialWhite"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/finding_pro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/search_pro_img"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginTop="80dp"
+                android:src="@drawable/searching_pros" />
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                style="@style/AVLoadingIndicatorView"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/search_pro_img"
+                android:visibility="visible"
+                app:indicatorName="BallBeatIndicator"
+                app:indicatorColor="@color/colorMaterialDark"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="finding nearby pros for your task"
+                android:fontFamily="@font/montserrat"
+                android:layout_below="@id/avi"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:padding="15dp"
+                android:textColor="@color/colorMaterialDark"
+                android:textSize="20sp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/finding_ques"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avi2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                style="@style/AVLoadingIndicatorView"
+                android:layout_centerHorizontal="true"
+                android:visibility="visible"
+                app:indicatorName="BallBeatIndicator"
+                app:indicatorColor="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading questions related to your task, please wait"
+                android:fontFamily="@font/montserrat"
+                android:layout_below="@id/avi2"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:padding="15dp"
+                android:textColor="@color/colorMaterialDark"
+                android:textSize="20sp"/>
+
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/bt_close"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentRight="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="@color/grey_40"
+            app:srcCompat="@drawable/ic_close" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/view_tasker"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/colorMaterialDark"
+        android:elevation="16dp"
+        android:fontFamily="@font/poppins"
+        android:paddingStart="12dp"
+        android:paddingEnd="20dp"
+        android:text="View Task"
+        android:textAllCaps="false"
+        android:textColor="@color/instaPrimary"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+</LinearLayout>

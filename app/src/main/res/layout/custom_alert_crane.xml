@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_bold"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textStyle="bold"
+        android:padding="@dimen/activity_horizontal_margin2"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:textSize="20sp"
+        android:text="Back to Sign in?" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:padding="@dimen/activity_horizontal_margin2"
+        android:text="The magic link is on its way. Check your inbox to reset your password"
+        android:fontFamily="@font/raleway_medium"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textSize="16sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin2"
+        android:padding="@dimen/activity_horizontal_margin2">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:textSize="14sp"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/raleway_medium"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="end"
+            android:id="@+id/crane_ok"
+            android:background="@null"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"/>
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

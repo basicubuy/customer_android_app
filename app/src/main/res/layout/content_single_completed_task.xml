@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/rootLayout"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false">
+
+    <com.github.florent37.shapeofview.shapes.RoundRectView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:layout_margin="5dp"
+        app:shape_roundRect_bottomLeftRadius="10dp"
+        app:shape_roundRect_bottomRightRadius="10dp"
+        app:shape_roundRect_topLeftRadius="10dp"
+        app:shape_roundRect_topRightRadius="10dp"
+     >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorMaterialWhite"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/project_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:text="My company website design "/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/bid_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lorem_ipsum2"
+                android:textSize="12sp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/textColorDark"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp">
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/bidder_image"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:src="@drawable/user_icon"
+                        app:civ_border_width="2dp"/>
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/bidder_online_status"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:tint="@color/done_color"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/status_circle"
+                        android:layout_marginBottom="5dp"
+                        app:civ_border_width="1dp"
+                        app:civ_border="true"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/pro_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp"
+                        android:maxLines="1"
+                        android:maxLength="15"
+                        android:ellipsize="end"
+                        android:text="John Ayomide williams mark philip 1"/>
+                    <TextView
+                        android:id="@+id/pro_skill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/textColorDark"
+                        android:textSize="10sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="Ui/UX Specialist"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@drawable/outline_star_border_24"
+                            app:tint="@color/ratingColor"/>
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@drawable/outline_star_border_24"
+                            app:tint="@color/ratingColor"/>
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@drawable/outline_star_border_24"
+                            app:tint="@color/ratingColor"/>
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@drawable/outline_star_border_24"
+                            app:tint="@color/ratingColor"/>
+                        <ImageView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:src="@drawable/outline_star_border_24"
+                            app:tint="@color/ratingColor"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/bid_amount_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textColor="@color/textColorDark_alt"
+                        android:textSize="12sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:text="Price: N30,000"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/project_started_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/textColorDark"
+                            android:textSize="12sp"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:text="Started: 09-08-2020"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duration: 21 Days"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/textColorDark"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:id="@+id/accept_bid_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:shape_roundRect_bottomLeftRadius="30dp"
+                    app:shape_roundRect_bottomRightRadius="30dp"
+                    app:shape_roundRect_topRightRadius="30dp"
+                    app:shape_roundRect_topLeftRadius="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/reviewed_color"
+                        android:text="Job Reviewed"
+                        android:paddingEnd="35dp"
+                        android:textAlignment="center"
+                        android:paddingStart="35dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:textSize="10sp"
+                        android:textColor="@color/colorMaterialWhite"/>
+
+
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:id="@+id/decline_bid_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    app:shape_roundRect_bottomLeftRadius="30dp"
+                    app:shape_roundRect_bottomRightRadius="30dp"
+                    app:shape_roundRect_topRightRadius="30dp"
+                    app:shape_roundRect_topLeftRadius="30dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/done_color"
+                        android:text="Payment Confirmed"
+                        android:paddingEnd="35dp"
+                        android:textAlignment="center"
+                        android:paddingStart="35dp"
+                        android:paddingTop="5dp"
+                        android:textAllCaps="false"
+                        android:paddingBottom="5dp"
+                        android:textSize="10sp"
+                        android:textColor="@color/colorMaterialWhite"/>
+
+
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:id="@+id/bid_cta_btn"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    app:shape_roundRect_topLeftRadius="10dp"
+                    app:shape_roundRect_topRightRadius="10dp"
+                    app:shape_roundRect_bottomLeftRadius="10dp"
+                    app:shape_roundRect_bottomRightRadius="10dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/notify_info_bg">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_arrow_forward_black_24dp"
+                            app:tint="@color/info_notify"
+                            android:padding="3dp"/>
+                    </RelativeLayout>
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+</LinearLayout>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorMaterialWhite"
+        >
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+       android:scrollingCache="true"
+        android:clipToPadding="false"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:clipToPadding="false">
+
+            <LinearLayout
+                android:id="@+id/feed_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/slider_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:layout_marginTop="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Popular Skills"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/textColorDark"
+                        android:paddingEnd="20dp"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popular_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/top_pros"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/top_pros_artisans"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/textColorDark"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="20dp"
+                        android:textSize="16sp"/>
+
+
+                    <TextView
+                        android:id="@+id/view_all_pros"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View all"
+                        android:textAlignment="textEnd"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingTop="10dp"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/top_pros_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="20dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Categories"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/textColorDark"
+                        android:paddingTop="10dp"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/view_all_cats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="view all"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingTop="10dp"
+                        android:textSize="14sp"/>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/category_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="1dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/lyt_not_found"
+        android:visibility="gone"
+        android:orientation="vertical"
+        >
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Something is wrong, check your network and try again "
+            android:layout_gravity="center"
+            android:textColor="@color/colorMaterialDark"
+            />
+
+        <Button
+            android:id="@+id/btn_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_corner_blue"
+            android:text="Retry"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/loading_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avi"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            app:indicatorName="BallBeatIndicator"
+            app:indicatorColor="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/tip_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Do you know that all ubuy.ng Pros are verified to prevent fraud?"
+            android:fontFamily="@font/montserrat"
+            android:layout_below="@id/avi"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:padding="15dp"
+            android:textColor="@color/colorMaterialDark"
+            android:textSize="16sp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/add_task_quick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tip_text"
+            android:background="@drawable/task_tips"
+            app:cardCornerRadius="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post Task"
+                android:textColor="@color/colorMaterialWhite"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:drawablePadding="20dp"
+                android:fontFamily="@font/poppins_medium"
+                android:drawableEnd="@drawable/ic_plus_circle"
+                android:drawableTint="@color/colorMaterialWhite"
+                />
+
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

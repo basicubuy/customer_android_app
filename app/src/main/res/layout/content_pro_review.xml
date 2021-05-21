@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    >
+
+ <RelativeLayout
+     android:layout_width="44dp"
+     android:layout_height="44dp">
+
+     <com.mikhaellopez.circularimageview.CircularImageView
+         android:layout_width="44dp"
+         android:layout_height="44dp"
+         app:civ_border="false"
+         app:srcCompat="@drawable/fake_user_image"/>
+
+     <ImageView
+         android:layout_width="10dp"
+         android:layout_height="10dp"
+         android:src="@drawable/shape_circle"
+         app:tint="@color/success_notify"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentRight="true"/>
+ </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/textColorDark_alt"
+            android:text="John Andrew"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="@color/textColorDark"
+            android:text="@string/lorem_ipsum2"/>
+
+         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+             android:gravity="end"
+            android:textColor="@color/textColorDark"
+            android:text="25/10/2020"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

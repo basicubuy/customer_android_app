@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/finding_ques"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical">
+
+
+            <TextView
+                android:id="@+id/hype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ooops!"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textFontWeight="800"
+                android:textColor="@color/colorMaterialDark"
+                android:textSize="32sp"/>
+
+            <ImageView
+                android:id="@+id/no_internet_img"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_below="@id/no_internet_img"
+                android:src="@drawable/no_internet" />
+
+            <TextView
+                android:id="@+id/no_internet_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Slow or internet connection found check your connection"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:padding="25dp"
+                android:textColor="@color/colorMaterialDark"
+                android:textSize="18sp"/>
+            <Button
+                android:id="@+id/bt_close"
+                android:layout_width="152dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_login"
+                android:text="Retry"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/bt_close"
+                        android:layout_width="?attr/actionBarSize"
+                        android:layout_height="35dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="@color/colorMaterialWhite"
+                        app:srcCompat="@drawable/ic_close" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tip_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What do you want done"
+                    android:layout_below="@id/toolbar"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/colorMaterialWhite"
+                    />
+                <androidx.cardview.widget.CardView
+                    android:layout_below="@+id/tip_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/colorMaterialWhite"
+                    android:padding="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="15dp"
+                    app:cardCornerRadius="5dp"
+                    >
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                        <EditText
+                            android:id="@+id/et_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:paddingStart="10dp"
+                            android:layout_weight="1"
+                            android:textColor="@color/fontColor"
+                            android:background="@android:color/transparent"
+                            android:imeOptions="actionSearch"
+                            android:maxLines="1"
+                            android:singleLine="true">
+
+                            <requestFocus />
+
+                        </EditText>
+
+                        <ImageButton
+                            android:id="@+id/bt_clear"
+                            android:layout_width="?attr/actionBarSize"
+                            android:layout_height="?attr/actionBarSize"
+                            android:background="@android:color/transparent"
+                            app:srcCompat="@drawable/ic_close"
+                            android:layout_alignParentEnd="true"
+                            android:tint="@color/colorPrimary"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/tab_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            app:tabGravity="fill"-->
+<!--            app:tabIndicatorColor="@color/colorMaterialWhite"-->
+<!--            app:tabIndicatorHeight="3dp"-->
+<!--            app:tabMode="fixed"-->
+<!--            android:layout_below="@id/relative_list"-->
+<!--            app:tabSelectedTextColor="@color/colorMaterialWhite"-->
+<!--            app:tabTextAppearance="@style/TextAppearance.Subhead.Bold"-->
+<!--            app:tabTextColor="@color/grey_60" />-->
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lyt_suggestion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerSuggestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:cacheColorHint="#0000"
+                android:scrollbars="none"
+                android:scrollingCache="true" />
+
+
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSuggest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/white"
+            android:visibility="visible"/>
+
+        <RelativeLayout
+            android:id="@+id/main_loader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:background="@color/overlay_light_60">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avi2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                style="@style/AVLoadingIndicatorView"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                app:indicatorName="BallBeatIndicator"
+                app:indicatorColor="@color/colorMaterialDark"/>
+
+            <TextView
+                android:id="@+id/loading_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Did you know, Over 5000+ pros are on ubuy.ng and yes all vetted"
+                android:fontFamily="@font/montserrat"
+                android:layout_below="@id/avi2"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:padding="15dp"
+                android:textColor="@color/colorMaterialDark"
+                android:textSize="16sp"/>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/overlay_loader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@color/overlay_light_60">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                style="@style/AVLoadingIndicatorView"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                app:indicatorName="BallBeatIndicator"
+                app:indicatorColor="@color/colorMaterialDark"
+                />
+
+            <TextView
+                android:id="@+id/loading_text"
+                android:layout_below="@id/avi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:visibility="visible"
+                android:textColor="@color/colorMaterialDark"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

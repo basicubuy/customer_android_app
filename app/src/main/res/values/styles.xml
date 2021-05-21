@@ -1,0 +1,220 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:typeface">serif</item>
+        <item name="colorControlHighlight">@color/light200</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <!--<item name="android:windowAnimationStyle">@style/AppTheme.WindowTransition</item>-->
+    </style>
+    <style name="MyCustomAlert3" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/custom_alert1</item>
+    </style>
+
+    <style name="textChip" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="AppTheme.ActionBar.Text" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/textColorDark</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <!--SECTOR FOR FACEBOOK AUTH BUTTON-->
+    <style name="FacebookLoginButton">
+        <item name="android:textSize">12sp</item>
+        <item name="background">@drawable/btn_rounded_outline_white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:layout_marginStart">5dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textColor">@color/colorMaterialWhite</item>
+
+    </style>
+
+    <style name="AppTheme.WindowTransition">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_in</item>
+    </style>
+    <style name="EditTextBlue" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@color/fontColor</item>
+        <item name="colorControlActivated">@color/materialBlue900</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+
+    <style name="CustomText">
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+    <style name="Profile15FabAddStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/ic_plus_circle</item>
+        <item name="borderWidth">0dp</item>
+        <item name="elevation">4dp</item>
+        <item name="android:tint">@color/colorMaterialWhite</item>
+        <item name="pressedTranslationZ">12dp</item>
+        <item name="rippleColor">@android:color/white</item>
+    </style>
+
+    <style name="Profile15FabShareStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/outline_share_24</item>
+        <item name="borderWidth">0dp</item>
+        <item name="elevation">4dp</item>
+        <item name="pressedTranslationZ">12dp</item>
+        <item name="rippleColor">@android:color/white</item>
+    </style>
+
+    <style name="Activity26ScrollbarStyle">
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:fadeScrollbars">true</item>
+        <item name="android:scrollbarThumbVertical">@drawable/recycler_scrollbar</item>
+        <item name="android:scrollbarTrackVertical">@android:color/transparent</item>
+        <item name="android:scrollbarSize">2dp</item>
+        <item name="android:scrollbarFadeDuration">2000</item>
+        <item name="android:scrollbarDefaultDelayBeforeFade">1000</item>
+    </style>
+
+    <style name="Activity26Input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:textCursorDrawable">@drawable/loginsignup_color_cursor</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/colorMaterialDark</item>
+    </style>
+
+    <style name="Button.Primary" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/done_color</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+
+    <!--style for ripple library-->
+    <style name="RippleStyleWhite">
+        <item name="mrl_rippleOverlay">true</item>
+        <item name="mrl_rippleColor">#80FFFFFF</item>
+        <item name="mrl_rippleHover">true</item>
+        <item name="mrl_rippleAlpha">0.2</item>
+    </style>
+
+    <style name="RippleStyleBlack" parent="RippleStyleWhite">
+        <item name="mrl_rippleColor">#8096989A</item>
+    </style>
+
+    <style name="RippleStyleDark" parent="RippleStyleWhite">
+        <item name="mrl_rippleColor">#80000000</item>
+    </style>
+
+    <style name="Dialog.Theme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+<!--ripple ends here-->
+
+    <style name="TextAppearance.Subhead.Bold" parent="@style/TextAppearance.AppCompat.Subhead">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.Medium.Bold" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/duskYellow</item>
+        <item name="colorControlActivated">@color/grey_20</item>
+    </style>
+    <style name="Toolbar.Light" parent="@style/AppTheme">
+        <item name="colorControlNormal">@color/grey_60</item>
+        <item name="android:textColorPrimary">@color/grey_60</item>
+    </style>
+
+    <!--<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="colorControlHighlight">@color/light200</item>
+        <item name="android:windowAnimationStyle">@style/AppTheme.WindowTransition</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TextAppearance.MaterialComponents.Headline6" parent="TextAppearance.AppCompat.Title">
+        <!-- Fake Roboto Medium. -->
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+
+    <!-- Insta app theme -->
+    <style name="AppThemeInsta" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/instaPrimary</item>
+        <item name="colorPrimaryDark">@color/light200</item>
+        <item name="colorAccent">@color/instaAccent</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColorSecondary">@color/colorPrimary</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Base.Widget.AppCompat.Button.Colored">
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
+
+
+    <!-- Custom app theme -->
+    <style name="AppThemeBlue" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/materialBlue</item>
+        <item name="colorPrimaryDark">@color/materialBlue900</item>
+        <item name="colorAccent">@color/red</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+
+    </style>
+    <style name="Button.Primary.Borderless" parent="@style/Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <style name="CustomRatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/amber</item>
+        <item name="colorControlActivated">@color/grey_20</item>
+    </style>
+    <!--<style name="AppBottomSheetDialogTheme"-->
+        <!--parent="Theme.Design.Light.BottomSheetDialog">-->
+        <!--<item name="bottomSheetStyle">@style/AppModalStyle</item>-->
+    <!--</style>-->
+
+    <!--<style name="AppModalStyle"-->
+        <!--parent="Widget.Design.BottomSheet.Modal">-->
+        <!--<item name="android:background">@drawable/btn_corner_snap</item>-->
+    <!--</style>-->
+</resources>

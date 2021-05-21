@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/wizard_bg"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp3"
+            android:layout_width="wrap_content"
+            android:layout_height="610dp"
+            android:layout_centerHorizontal="true"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:overScrollMode="never"
+            android:paddingStart="10dp"
+            android:paddingEnd="30dp" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/carrier2"
+            android:background="@color/lightgrey"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:id="@+id/carrier2"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:text="Sign UP"
+                android:id="@+id/cus_join_btn"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:text="Log in"
+                android:id="@+id/entry_logIn"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

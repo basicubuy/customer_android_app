@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signup_screen"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/activity_horizontal_margin2"
+            android:layout_marginTop="50dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="5dp"
+                android:src="@drawable/ic_phone_android_black_24dp"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin2"
+                android:fontFamily="@font/montserrat_bold"
+                android:padding="@dimen/activity_horizontal_margin2"
+                android:text="Verify Your contacts"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Make it easy for us to reach you with uodates on your projects and nearby pro's you might be intrested in."
+            android:fontFamily="@font/montserrat_bold"
+            android:textAlignment="center"
+            android:padding="@dimen/activity_horizontal_margin2"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/myNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:text="Enter OTP"
+                android:focusable="false"
+                android:paddingStart="22dp"
+                android:paddingEnd="22dp"
+                android:paddingBottom="16dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/verify_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/btn_corner_blue"
+            android:fontFamily="@font/montserrat"
+            android:singleLine="true"
+            android:layout_gravity="center"
+            android:paddingStart="80dp"
+            android:paddingEnd="80dp"
+            android:textAllCaps="false"
+            android:text="Verify"
+            android:textSize="18sp"
+            android:textColor="@color/colorMaterialWhite" />
+
+
+        <TextView
+            android:id="@+id/edit_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click here to edit your number"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:textColor="@color/colorPrimary"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We sent an email to "
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_gravity="center"
+                android:textColor="@color/colorMaterialDark"
+                android:padding="@dimen/activity_horizontal_margin2"/>
+
+            <TextView
+                android:id="@+id/myEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="youremail@gmail.com"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:padding="@dimen/activity_horizontal_margin2"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

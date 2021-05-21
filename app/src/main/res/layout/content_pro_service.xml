@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/rootLayout"
+    android:gravity="center"
+    android:layout_width="140dp"
+    android:layout_height="150dp"
+    android:layout_margin="8dp"
+    >
+
+  <com.github.florent37.shapeofview.shapes.RoundRectView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:shape_roundRect_bottomLeftRadius="10dp"
+      app:shape_roundRect_topRightRadius="10dp"
+      app:shape_roundRect_topLeftRadius="10dp"
+      app:shape_roundRect_bottomRightRadius="10dp"
+      >
+
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <ImageView
+              android:id="@+id/service_img"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:src="@drawable/pro_cover_photo"
+              android:scaleType="centerCrop"/>
+
+          <ImageView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:src="@color/overlay_dark_40"/>
+          <TextView
+              android:id="@+id/service_name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="16sp"
+              android:text="UI/UX"
+              android:layout_marginStart="5dp"
+              android:layout_marginEnd="5dp"
+              android:textAlignment="center"
+              android:layout_centerInParent="true"
+              android:textColor="@color/colorMaterialWhite"
+              android:fontFamily="@font/poppins_medium"/>
+      </RelativeLayout>
+
+
+  </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+</LinearLayout>

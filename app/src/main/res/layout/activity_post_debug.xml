@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorMaterialWhite"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:expandedTitleMarginBottom="20dp"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="15dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="bottom"
+                app:layout_collapseMode="pin"
+                android:background="@android:color/white"
+                app:contentInsetStartWithNavigation="0dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/Toolbar.Light"  />
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:gravity="center">
+               <TextView
+                   android:id="@+id/task_title"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Add Task"
+                   android:fontFamily="@font/poppins_semibold"
+                   android:textColor="@color/textColorDark"
+                   android:textAlignment="center"
+                   android:textSize="14sp"
+                   android:gravity="center"
+                   />
+               <TextView
+                   android:id="@+id/task_sub_title"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:visibility="gone"
+                   android:layout_below="@id/task_title"
+                   android:fontFamily="@font/poppins"
+                   android:textColor="@color/textColorDark"
+                   android:textAlignment="center"
+                   android:textSize="10sp"
+                   android:gravity="center"/>
+           </RelativeLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/nested_scroller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:paddingBottom="40dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/title_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:text="Task Title"
+                    android:textColor="@color/textColorDark_alt" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spacing_xmlarge"
+                    android:layout_marginTop="@dimen/spacing_middle"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edit_text_round_bg_outline"
+                        android:focusable="true"
+                      />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:id="@+id/title_error_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="Task title is required"
+                    android:drawablePadding="3dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/error_form"
+                    app:drawableStartCompat="@drawable/ic_info_validate"
+                    app:drawableTint="@color/error_form" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/details_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_lyt"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Task Details"
+                    android:textColor="@color/textColorDark_alt" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="@dimen/spacing_middle"
+                    android:background="@color/overlay_dark_10"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_des"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:textAlignment="textStart"
+                        android:background="@drawable/edit_text_round_bg_outline"
+                        android:textColorHint="@color/input_field" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/cat_budget_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/details_lyt"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Budget (N)"
+                        android:textColor="@color/textColorDark_alt"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_xmlarge"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText_budget"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/edit_text_round_bg_outline"
+                            android:focusable="true"
+                            android:textColorHint="@color/input_field" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <TextView
+                        android:id="@+id/budget_error_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:text="Budget is required"
+                        android:drawablePadding="3dp"
+                        android:layout_marginTop="3dp"
+                        android:visibility="gone"
+                        android:textColor="@color/error_form"
+                        app:drawableStartCompat="@drawable/ic_info_validate"
+                        app:drawableTint="@color/error_form" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/cat_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Category"
+                        android:textColor="@color/textColorDark_alt" />
+
+                    <com.github.florent37.shapeofview.shapes.RoundRectView
+                        android:id="@+id/cats_sh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/cat_title"
+                        android:padding="2dp"
+                        app:shape_roundRect_bottomLeftRadius="10dp"
+                        app:shape_roundRect_bottomRightRadius="10dp"
+                        app:shape_roundRect_topLeftRadius="10dp"
+                        app:shape_roundRect_topRightRadius="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/cat_li_lyt"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:padding="15dp"
+                            android:background="@drawable/edit_text_select_bg_outline"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/select_cat_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Select category"
+                                android:layout_gravity="center_vertical"
+                                android:textColor="@color/textColorDark_alt"
+                                android:textSize="11sp" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/cat_dropdown_img"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_chevron_down" />
+
+                        </LinearLayout>
+
+                    </com.github.florent37.shapeofview.shapes.RoundRectView>
+                    <TextView
+                        android:id="@+id/cat_error_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:text="Please select a category"
+                        android:layout_below="@id/cats_sh"
+                        android:drawablePadding="3dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@color/error_form"
+                        app:drawableTint="@color/error_form"
+                        app:drawableStartCompat="@drawable/ic_info_validate" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sub_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cat_budget_lyt"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cat_sub_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Sub Categories"
+                    android:textColor="@color/textColorDark_alt" />
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:id="@+id/subCats_sh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cat_title"
+                    android:padding="2dp"
+                    app:shape_roundRect_bottomLeftRadius="10dp"
+                    app:shape_roundRect_bottomRightRadius="10dp"
+                    app:shape_roundRect_topLeftRadius="10dp"
+                    app:shape_roundRect_topRightRadius="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/subcat_li_lyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="15dp"
+                        android:background="@drawable/edit_text_select_bg_outline"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/select_sub_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select subcategory"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textColorDark_alt"
+                            android:textSize="11sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:id="@+id/select_sub_drop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_chevron_down" />
+
+                    </LinearLayout>
+
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+                <TextView
+                    android:id="@+id/sub_cat_error_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="This field is required"
+                    android:drawablePadding="3dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/error_form"
+                    app:drawableStartCompat="@drawable/ic_info_validate"
+                    app:drawableTint="@color/error_form" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/skills_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sub_lyt"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/sub_skill_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Select Skill (Optional)"
+                    android:textColor="@color/textColorDark_alt" />
+
+                <com.github.florent37.shapeofview.shapes.RoundRectView
+                    android:id="@+id/subSkill_sh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    app:shape_roundRect_bottomLeftRadius="10dp"
+                    app:shape_roundRect_bottomRightRadius="10dp"
+                    app:shape_roundRect_topLeftRadius="10dp"
+                    app:shape_roundRect_topRightRadius="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/skill_li_lyt"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:padding="15dp"
+                        android:background="@drawable/edit_text_select_bg_outline"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/select_skill_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select skill"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/textColorDark_alt"
+                            android:textSize="11sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1" />
+
+                        <ImageView
+                            android:id="@+id/select_skill_drop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_chevron_down" />
+
+                    </LinearLayout>
+
+                </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/skills_chip_grp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:chipSpacing="5dp"
+                    android:layout_marginTop="20dp"
+                    app:singleSelection="true"
+                    />
+               
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/location_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@id/skills_lyt"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/state_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="State"
+                        android:textColor="@color/textColorDark_alt" />
+
+                    <com.github.florent37.shapeofview.shapes.RoundRectView
+                        android:id="@+id/state_sh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/state_title"
+                        android:padding="2dp"
+                        app:shape_roundRect_bottomLeftRadius="10dp"
+                        app:shape_roundRect_bottomRightRadius="10dp"
+                        app:shape_roundRect_topLeftRadius="10dp"
+                        app:shape_roundRect_topRightRadius="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/state_li_lyt"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:padding="15dp"
+                            android:background="@drawable/edit_text_select_bg_outline"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/select_state_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Select State"
+                                android:layout_gravity="center_vertical"
+                                android:textColor="@color/textColorDark_alt"
+                                android:textSize="11sp" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/state_dropdown_img"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_chevron_down" />
+
+                        </LinearLayout>
+
+                    </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                    <TextView
+                        android:id="@+id/state_error_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:text="Please select your state"
+                        android:drawablePadding="3dp"
+                        android:layout_below="@id/state_sh"
+                        android:visibility="gone"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@color/error_form"
+                        app:drawableStartCompat="@drawable/ic_info_validate"
+                        app:drawableTint="@color/error_form" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="LGA"
+                        android:textColor="@color/textColorDark_alt"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing_xmlarge"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText_lga"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/edit_text_round_bg_outline"
+                            android:focusable="true"
+                            android:textColorHint="@color/input_field" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <TextView
+                        android:id="@+id/lga_error_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="10sp"
+                        android:text="This field is required"
+                        android:drawablePadding="3dp"
+                        android:visibility="gone"
+                        android:layout_marginTop="3dp"
+                        android:textColor="@color/error_form"
+                        app:drawableStartCompat="@drawable/ic_info_validate"
+                        app:drawableTint="@color/error_form" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/address_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@id/location_lyt"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Street address"
+                    android:textColor="@color/textColorDark_alt" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spacing_xmlarge"
+                    android:layout_marginTop="@dimen/spacing_middle"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/edit_text_round_bg_outline"
+                        android:focusable="true"
+                        android:textColorHint="@color/input_field" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/address_error_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="This field is required"
+                    android:drawablePadding="3dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/error_form"
+                    app:drawableStartCompat="@drawable/ic_info_validate"
+                    app:drawableTint="@color/error_form" />
+            </LinearLayout>
+
+
+           <LinearLayout
+               android:id="@+id/post_lyt"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_marginTop="30dp"
+               android:layout_marginBottom="20dp"
+               android:layout_below="@id/address_lyt"
+               android:gravity="end">
+
+               <com.github.florent37.shapeofview.shapes.RoundRectView
+                   android:id="@+id/post_task_sh"
+                   android:layout_width="152dp"
+                   android:layout_height="40dp"
+                   app:shape_roundRect_topLeftRadius="8dp"
+                   app:shape_roundRect_topRightRadius="8dp"
+                   app:shape_roundRect_bottomLeftRadius="8dp"
+                   app:shape_roundRect_bottomRightRadius="8dp"
+                   >
+
+                   <TextView
+                       android:id="@+id/draft_post_txt"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:background="@color/not_saved"
+                       android:textSize="14sp"
+                       android:textColor="@color/colorMaterialWhite"
+                       android:textAlignment="center"
+                       android:fontFamily="@font/poppins_semibold"
+                       android:gravity="center"
+                       android:text="Post Task"/>
+                   <TextView
+                       android:id="@+id/save_post_txt"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:background="@color/colorPrimary"
+                       android:textSize="14sp"
+                       android:textColor="@color/colorMaterialWhite"
+                       android:textAlignment="center"
+                       android:visibility="gone"
+                       android:fontFamily="@font/poppins_semibold"
+                       android:gravity="center"
+                       android:text="Post Task"/>
+
+                   <com.wang.avi.AVLoadingIndicatorView
+                       android:id="@+id/avisave_draft"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_centerInParent="true"
+                       android:background="@color/not_saved"
+                       style="@style/AVLoadingIndicatorView"
+                       android:visibility="gone"
+                       android:paddingStart="20dp"
+                       app:indicatorName="BallPulseIndicator"
+                       app:indicatorColor="@color/overlay_light_60"
+                       />
+
+               </com.github.florent37.shapeofview.shapes.RoundRectView>
+           </LinearLayout>
+
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/cats_view_lyt"
+                android:layout_width="167dp"
+                android:layout_height="250dp"
+                android:layout_below="@id/cat_budget_lyt"
+                android:layout_marginEnd="5dp"
+                android:elevation="2dp"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"
+                app:shape_roundRect_bottomLeftRadius="10dp"
+                app:shape_roundRect_bottomRightRadius="10dp"
+                app:shape_roundRect_topLeftRadius="10dp"
+                app:shape_roundRect_topRightRadius="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cats_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorMaterialWhite"
+                    android:elevation="2dp" />
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/state_view_lyt"
+                android:layout_width="167dp"
+                android:layout_height="250dp"
+                android:layout_below="@id/location_lyt"
+                android:layout_marginStart="5dp"
+                android:elevation="2dp"
+                android:visibility="gone"
+                app:shape_roundRect_bottomLeftRadius="10dp"
+                app:shape_roundRect_bottomRightRadius="10dp"
+                app:shape_roundRect_topLeftRadius="10dp"
+                app:shape_roundRect_topRightRadius="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/state_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorMaterialWhite"
+                    android:elevation="2dp" />
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/sub_cats_view_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@id/sub_lyt"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:elevation="2dp"
+                android:visibility="gone"
+                app:shape_roundRect_bottomLeftRadius="10dp"
+                app:shape_roundRect_bottomRightRadius="10dp"
+                app:shape_roundRect_topLeftRadius="10dp"
+                app:shape_roundRect_topRightRadius="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/subcats_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorMaterialWhite"
+                    android:elevation="2dp" />
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:id="@+id/sub_skills_view_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@id/skills_lyt"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:elevation="2dp"
+                android:visibility="gone"
+                app:shape_roundRect_bottomLeftRadius="10dp"
+                app:shape_roundRect_bottomRightRadius="10dp"
+                app:shape_roundRect_topLeftRadius="10dp"
+                app:shape_roundRect_topRightRadius="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/skills_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorMaterialWhite"
+                    android:elevation="2dp" />
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

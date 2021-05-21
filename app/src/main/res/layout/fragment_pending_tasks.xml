@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="18dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/pending_rv3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                />
+
+
+            <RelativeLayout
+                android:id="@+id/no_projects_found"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:background="@color/colorMaterialWhite">
+
+                <com.github.florent37.shapeofview.shapes.CircleView
+                    android:id="@+id/cir_bg"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="10dp"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/notify_info_bg">
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:src="@drawable/ic_add_white_24dp"
+                            app:tint="@color/info_notify"
+                            android:layout_centerInParent="true"
+                            />
+                    </RelativeLayout>
+                </com.github.florent37.shapeofview.shapes.CircleView>
+
+                <TextView
+                    android:id="@+id/no_task_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cir_bg"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/textColorDark"
+                    android:text="Post a New task"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+
+                    />
+                <TextView
+                    android:id="@+id/no_task_des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/no_task_text"
+                    android:textColor="@color/textColor"
+                    android:text="Let's get this task done!"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="24dp"
+                    />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/overlay_loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:background="@color/overlay_light_60">
+
+
+        <ProgressBar
+            android:id="@+id/lyt_progress"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/loading_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Finding your projects..."
+            android:fontFamily="@font/montserrat"
+            android:layout_below="@id/lyt_progress"
+            android:textAlignment="center"
+            android:padding="15dp"
+            android:textColor="@color/colorMaterialDark"
+            android:textSize="16sp"/>
+
+
+    </RelativeLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

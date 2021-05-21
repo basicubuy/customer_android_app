@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lyt_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:expandedTitleMarginBottom="20dp"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="15dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="parallax" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:gravity="bottom"
+                app:layout_collapseMode="pin"
+                android:background="@android:color/white"
+                app:contentInsetStartWithNavigation="0dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/Toolbar.Light"  />
+
+            <TextView
+                android:id="@+id/proname_toolbar_txt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="John Ayomide"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/textColorDark"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:gravity="center"/>
+
+<!--            <ImageView-->
+<!--                android:id="@+id/toggle_nav_menu"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center|end"-->
+<!--                android:src="@drawable/ic_more_vertical"-->
+<!--                android:layout_marginEnd="31dp"-->
+<!--                app:tint="@color/textColorDark"/>-->
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+              <RelativeLayout
+
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="20dp"
+                  android:layout_marginTop="20dp"
+                  android:layout_marginEnd="20dp"
+                  android:paddingBottom="0dp">
+
+                  <com.github.florent37.shapeofview.shapes.RoundRectView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      app:shape_roundRect_topLeftRadius="10dp"
+                      app:shape_roundRect_bottomLeftRadius="10dp"
+                      app:shape_roundRect_bottomRightRadius="10dp"
+                      app:shape_roundRect_topRightRadius="10dp"
+                      >
+
+                      <ImageView
+                          android:id="@+id/pro_cover_image"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:src="@drawable/pro_cover_photo"
+                          android:scaleType="centerCrop"/>
+                  </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+                  <ImageView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_alignParentRight="true"
+                      android:src="@drawable/top_pro_badge" />
+              </RelativeLayout>
+
+              <com.mikhaellopez.circularimageview.CircularImageView
+                  android:id="@+id/pro_user_image"
+                  android:layout_width="100dp"
+                  android:layout_height="100dp"
+                  android:layout_marginTop="80dp"
+                  android:layout_centerHorizontal="true"
+                  app:srcCompat="@drawable/fake_user_image" />
+          </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/pro_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColorDark_alt"
+                    android:text="John Ayomide"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/poppins_semibold"
+                    />
+                    <ImageView
+                        android:id="@+id/pro_user_verified_badge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pro_verified_badge"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/job_done_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColorDark_alt"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jobs Done"
+                        android:textSize="12sp"
+                        android:textColor="@color/fontColorLight"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/breaker"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/rating_rate_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColorDark_alt"/>
+
+                    <TextView
+                        android:id="@+id/rating_rate_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="72 Ratings"
+                        android:textSize="12sp"
+                        android:textColor="@color/fontColorLight"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/breaker"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/joined_date_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aug 20"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColorDark_alt"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date Joined"
+                        android:textSize="12sp"
+                        android:textColor="@color/fontColorLight"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.github.florent37.shapeofview.shapes.RoundRectView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:shape_roundRect_topLeftRadius="12dp"
+                app:shape_roundRect_bottomLeftRadius="12dp"
+                app:shape_roundRect_topRightRadius="12dp"
+                app:shape_roundRect_bottomRightRadius="12dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:elevation="1dp"
+                    android:background="@color/colorMaterialWhite"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/id_verify_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Identity Verified"
+                        android:textSize="10sp"
+                        android:textColor="@color/textColorDark"
+                        android:drawableStart="@drawable/id_check"
+                        android:drawablePadding="5dp"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/breaker"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"/>
+
+                    <TextView
+                        android:id="@+id/number_verify_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone Number Verified"
+                        android:textSize="10sp"
+                        android:textColor="@color/textColorDark"
+                        android:drawableStart="@drawable/number_check"
+                        android:drawablePadding="5dp"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/breaker"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"/>
+                    <TextView
+                        android:id="@+id/email_verify_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email Verified"
+                        android:textSize="10sp"
+                        android:textColor="@color/textColorDark"
+                        android:drawableStart="@drawable/email_check"
+                        android:drawablePadding="5dp"/>
+                </LinearLayout>
+
+            </com.github.florent37.shapeofview.shapes.RoundRectView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/bid_des_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textAlignment="textStart"
+                    android:text="@string/lorem_ipsum2"
+                    android:textColor="@color/textColorDark_alt"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bid_freelance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="Amount: "
+                    android:textColor="@color/textColorDark_alt"/>
+                <TextView
+                    android:id="@+id/fr_amount_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="N30000"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/textColorDark_alt"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bid_artisan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Total: "
+                        android:textColor="@color/textColorDark_alt"/>
+                    <TextView
+                        android:id="@+id/ar_amount_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColor="@color/textColorDark_alt"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Material Funds: "
+                        android:textColor="@color/textColorDark_alt"/>
+                    <TextView
+                        android:id="@+id/material_amount_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColor="@color/textColorDark_alt"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="Service Fee: "
+                        android:textColor="@color/textColorDark_alt"/>
+                    <TextView
+                        android:id="@+id/service_amount_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColor="@color/textColorDark_alt"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp">
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1">
+                    <Button
+                        android:id="@+id/accept_bid_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Accept Bid"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorMaterialWhite"
+                        android:background="@drawable/btn_corner_pay"/>
+
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+                    <Button
+                        android:id="@+id/decline_bid_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Decline"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorMaterialWhite"
+                        android:backgroundTint="@color/error_form"
+                        android:background="@drawable/btn_corner_pay"/>
+
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/chat_pro_fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:fabSize="mini"
+                    app:srcCompat = "@drawable/ic_chat_blue"
+                    android:tint="@android:color/white"
+                    app:backgroundTint="@color/colorPrimary"
+                    />
+
+
+
+            </LinearLayout>
+
+            <!--breaker-->
+
+            <RelativeLayout
+                android:id="@+id/loading_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal">
+
+                <com.wang.avi.AVLoadingIndicatorView
+                    android:id="@+id/avi"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    style="@style/AVLoadingIndicatorView"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible"
+                    app:indicatorName="BallBeatIndicator"
+                    app:indicatorColor="@color/colorPrimary"/>
+
+            </RelativeLayout>
+
+
+           <LinearLayout
+               android:id="@+id/show_data"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Services"
+                   android:textColor="@color/textColorDark"
+                   android:textSize="16sp"
+                   android:layout_marginStart="20dp"
+                   android:layout_marginEnd="20dp"
+                   android:layout_marginTop="15dp"/>
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/services_rv"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginTop="10dp"
+                   />
+
+               <com.github.florent37.shapeofview.shapes.RoundRectView
+                   android:id="@+id/no_services"
+                   android:layout_width="match_parent"
+                   android:layout_height="150dp"
+                   app:shape_roundRect_topLeftRadius="10dp"
+                   app:shape_roundRect_bottomLeftRadius="10dp"
+                   app:shape_roundRect_topRightRadius="10dp"
+                   app:shape_roundRect_bottomRightRadius="10dp"
+                   android:layout_marginStart="20dp"
+                   android:layout_marginEnd="20dp"
+                   android:layout_marginTop="15dp"
+                   android:visibility="gone"
+                 >
+
+                   <RelativeLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:background="@color/input_field">
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_centerHorizontal="true"
+                           android:text="Services not added yet"
+                           android:textSize="24sp"
+                           android:fontFamily="@font/poppins_medium"/>
+
+                   </RelativeLayout>
+
+               </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+               <com.github.florent37.shapeofview.shapes.RoundRectView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:shape_roundRect_topLeftRadius="10dp"
+                   app:shape_roundRect_bottomLeftRadius="10dp"
+                   app:shape_roundRect_topRightRadius="10dp"
+                   app:shape_roundRect_bottomRightRadius="10dp"
+                   android:layout_marginStart="20dp"
+                   android:layout_marginEnd="20dp"
+                   android:layout_marginTop="15dp"
+                   android:elevation="2dp">
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="vertical"
+                       android:padding="20dp"
+                       android:background="@color/colorMaterialWhite">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@android:color/white"
+                           android:gravity="center_vertical"
+                           android:minHeight="?attr/actionBarSize"
+                           android:orientation="horizontal"
+                           android:elevation="2dp">
+
+                           <LinearLayout
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="1"
+                               android:orientation="vertical">
+
+                               <TextView
+                                   android:id="@+id/reviews_card_txt"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="Reviews"
+                                   android:fontFamily="@font/poppins_medium"
+                                   android:textSize="16sp"
+                                   android:maxLines="1"
+                                   android:ellipsize="end"
+                                   android:textColor="@color/textColorDark_alt" />
+
+
+                           </LinearLayout>
+
+                           <ImageButton
+                               android:id="@+id/bt_toggle_review_text"
+                               android:layout_width="?attr/actionBarSize"
+                               android:layout_height="?attr/actionBarSize"
+                               android:background="?attr/selectableItemBackgroundBorderless"
+                               android:tint="@color/grey_80"
+                               app:srcCompat="@drawable/ic_expand_arrow" />
+
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:id="@+id/lyt_expand_rv_lyt"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="vertical">
+
+                           <androidx.recyclerview.widget.RecyclerView
+                               android:id="@+id/reviews_rv"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"/>
+
+                       </LinearLayout>
+
+                   </LinearLayout>
+
+               </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+               <com.github.florent37.shapeofview.shapes.RoundRectView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   app:shape_roundRect_topLeftRadius="10dp"
+                   app:shape_roundRect_bottomLeftRadius="10dp"
+                   app:shape_roundRect_topRightRadius="10dp"
+                   app:shape_roundRect_bottomRightRadius="10dp"
+                   android:layout_marginStart="20dp"
+                   android:layout_marginEnd="20dp"
+                   android:layout_marginTop="15dp"
+                   android:visibility="visible"
+                   android:elevation="2dp">
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="vertical"
+                       android:padding="20dp"
+                       android:background="@color/colorMaterialWhite">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@android:color/white"
+                           android:gravity="center_vertical"
+                           android:minHeight="?attr/actionBarSize"
+                           android:orientation="horizontal"
+                           android:elevation="2dp">
+
+                           <LinearLayout
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="1"
+                               android:orientation="vertical">
+
+                               <TextView
+                                   android:id="@+id/hours_card_txt"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="Work Hours"
+                                   android:fontFamily="@font/poppins_medium"
+                                   android:textSize="16sp"
+                                   android:maxLines="1"
+                                   android:ellipsize="end"
+                                   android:textColor="@color/textColorDark_alt" />
+
+
+                           </LinearLayout>
+
+                           <ImageButton
+                               android:id="@+id/bt_toggle_hour_text"
+                               android:layout_width="?attr/actionBarSize"
+                               android:layout_height="?attr/actionBarSize"
+                               android:background="?attr/selectableItemBackgroundBorderless"
+                               android:tint="@color/grey_80"
+                               app:srcCompat="@drawable/ic_expand_arrow" />
+
+                       </LinearLayout>
+
+                       <LinearLayout
+                           android:id="@+id/lyt_expand_rv_hour_lyt"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="vertical">
+
+                           <LinearLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:orientation="horizontal"
+                               android:layout_marginTop="20dp">
+
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="Day"
+                                   android:textColor="@color/textColorDark_alt"
+                                   android:textSize="16sp"
+                                   android:fontFamily="@font/poppins_semibold"
+                                   />
+
+                               <View
+                                   android:layout_width="0dp"
+                                   android:layout_height="1dp"
+                                   android:layout_weight="1"/>
+
+
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="Hours"
+                                   android:textColor="@color/textColorDark_alt"
+                                   android:textSize="16sp"
+                                   android:fontFamily="@font/poppins_semibold"
+                                   />
+
+                           </LinearLayout>
+
+                           <androidx.recyclerview.widget.RecyclerView
+                               android:id="@+id/hours_rv"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"/>
+
+                       </LinearLayout>
+
+                   </LinearLayout>
+
+               </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Recent Works"
+                   android:textSize="16sp"
+                   android:fontFamily="@font/poppins_medium"
+                   android:textColor="@color/textColorDark_alt"
+                   />
+
+               <androidx.recyclerview.widget.RecyclerView
+                   android:id="@+id/port_rv"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"/>
+
+               <com.github.florent37.shapeofview.shapes.RoundRectView
+                   android:id="@+id/no_portfolio"
+                   android:layout_width="match_parent"
+                   android:layout_height="150dp"
+                   app:shape_roundRect_topLeftRadius="10dp"
+                   app:shape_roundRect_bottomLeftRadius="10dp"
+                   app:shape_roundRect_topRightRadius="10dp"
+                   app:shape_roundRect_bottomRightRadius="10dp"
+                   android:layout_marginStart="20dp"
+                   android:layout_marginEnd="20dp"
+                   android:layout_marginTop="15dp"
+                   android:visibility="gone"
+                   >
+
+                   <RelativeLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:background="@color/input_field">
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_centerHorizontal="true"
+                           android:text="This pro has'nt posted yet"
+                           android:textSize="24sp"
+                           android:fontFamily="@font/poppins_medium"/>
+
+                   </RelativeLayout>
+
+               </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+
+           </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.freshdesk:freshchat-android:3.4.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed625ba820f2f182f9a6cacd6ede7960/jetified-freshchat-android-3.4.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed625ba820f2f182f9a6cacd6ede7960/jetified-freshchat-android-3.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed625ba820f2f182f9a6cacd6ede7960/jetified-freshchat-android-3.4.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ed625ba820f2f182f9a6cacd6ede7960/jetified-freshchat-android-3.4.0/jars/libs/freshchat.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/00c23f1621e0319de87d05376087b725/jetified-freshchat-android-3.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/00c23f1621e0319de87d05376087b725/jetified-freshchat-android-3.4.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/00c23f1621e0319de87d05376087b725/jetified-freshchat-android-3.4.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/00c23f1621e0319de87d05376087b725/jetified-freshchat-android-3.4.0/jars/libs/freshchat.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a0efbdb8fd040083da86d7763629df5/jetified-freshchat-android-3.4.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a0efbdb8fd040083da86d7763629df5/jetified-freshchat-android-3.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a0efbdb8fd040083da86d7763629df5/jetified-freshchat-android-3.4.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a0efbdb8fd040083da86d7763629df5/jetified-freshchat-android-3.4.0/jars/libs/freshchat.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

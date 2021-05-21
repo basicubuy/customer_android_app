@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lyt_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/wizard_img"
+            android:layout_width="220dp"
+            android:layout_height="250dp"
+            android:src="@drawable/post_task_wizard"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubuy Nigeria"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="25sp"
+            android:textColor="@color/colorMaterialWhite"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textAlignment="center"
+            android:text="demo text for testng"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/colorMaterialWhite" />
+
+
+    </LinearLayout>
+
+
+    <com.github.florent37.shapeofview.shapes.CircleView
+        android:id="@+id/fab_next_wiz"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:elevation="2dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/colorMaterialWhite"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorMaterialWhite">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:src="@drawable/ic_arrow_forward_black_24dp"
+                android:tint="@color/colorPrimary"/>
+        </RelativeLayout>
+    </com.github.florent37.shapeofview.shapes.CircleView>
+    <Button
+        android:id="@+id/get_started_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:background="@drawable/btn_corner"
+        android:backgroundTint="@color/colorMaterialWhite"
+        android:layout_marginTop="10dp"
+        android:text="Get Started"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="@font/poppins_semibold"
+        android:textAllCaps="false"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="40dp"
+        android:paddingStart="30dp"
+        android:textSize="17dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingEnd="30dp"/>
+</RelativeLayout>
