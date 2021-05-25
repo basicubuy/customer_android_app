@@ -285,10 +285,6 @@ public class ProjectBidActivity extends AppCompatActivity implements AdapBidsInt
         });
     }
 
-    private Object getProjectJson(String jsonResponse){
-
-    }
-
 
     private void getBidsJson(String jsonresponse) {
         try {

@@ -1,11 +1,15 @@
 package com.ubuyng.app;
 
 import android.content.Intent;
+import android.location.Address;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -43,6 +47,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import okhttp3.HttpUrl;
@@ -81,6 +86,7 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
     private Integer sub_type_checker, saving_checker;
     private AVLoadingIndicatorView avisave_draft;
     MyApplication App;
+    private Button find_location;
 
 
     @Override
@@ -104,7 +110,7 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
         //SECTION:: breakers area
 
         post_lyt = findViewById(R.id.post_lyt);
-        task_sub_title = findViewById(R.id.task_sub_title);
+//        task_sub_title = findViewById(R.id.task_sub_title);
         post_lyt.setVisibility(View.VISIBLE);
 //        categories
         cats_sh = findViewById(R.id.cats_sh);
@@ -154,6 +160,23 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
         editText_title = findViewById(R.id.editText_title);
 //        check if the edittext has left focus
 
+        find_location = findViewById(R.id.find_location);
+
+        find_location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Uri gmmIntentUri = Uri.parse("geo:0,0?q=");
+                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                        mapIntent.setPackage("com.google.android.apps.maps");
+                        startActivity(mapIntent);
+                    }
+                }, 1000);
+            }
+        });
+
        editText_title.setOnFocusChangeListener(new View.OnFocusChangeListener() {
            @Override
            public void onFocusChange(View view, boolean e) {
@@ -166,7 +189,7 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
         editText_budget = findViewById(R.id.editText_budget);
         editText_des = findViewById(R.id.editText_des);
 
-        editText_lga = findViewById(R.id.editText_lga);
+//        editText_lga = findViewById(R.id.editText_lga);
         editText_address = findViewById(R.id.editText_address);
 
 //        errors
@@ -198,11 +221,11 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
 
 
         if (intentSubId == null){
-                task_sub_title.setVisibility(View.VISIBLE);
-            if(intentProName == null) {
-                task_sub_title.setText("Hire "+intentProName+" for a " +intentSubName+" job");
-            }
-                task_sub_title.setText("Post a " +intentSubName+" job");
+//                task_sub_title.setVisibility(View.VISIBLE);
+//            if(intentProName == null) {
+//                task_sub_title.setText("Hire "+intentProName+" for a " +intentSubName+" job");
+//            }
+//                task_sub_title.setText("Post a " +intentSubName+" job");
             select_sub_text.setText(intentSubName);
             select_sub_text.setTextColor(getResources().getColor(R.color.colorPrimary));
             select_sub_drop.setColorFilter(ContextCompat.getColor(this, R.color.colorPrimary));
@@ -449,15 +472,15 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
                     ActivateSave();
                 }
 
-                str_taskLga = editText_lga.getText().toString();
-                if (str_taskLga.length() <= 0 || str_taskLga.length() <= 6 ){
-                    lga_error_txt.setVisibility(View.VISIBLE);
-                    editText_lga.setBackground(ContextCompat.getDrawable(PosterActivity.this, R.drawable.edit_text_error_bg_outline));
-                }else{
-                    lga_error_txt.setVisibility(View.GONE);
-                    editText_lga.setBackground(ContextCompat.getDrawable(PosterActivity.this, R.drawable.edit_text_round_bg_outline));
-                    ActivateSave();
-                }
+//                str_taskLga = editText_lga.getText().toString();
+//                if (str_taskLga.length() <= 0 || str_taskLga.length() <= 6 ){
+//                    lga_error_txt.setVisibility(View.VISIBLE);
+//                    editText_lga.setBackground(ContextCompat.getDrawable(PosterActivity.this, R.drawable.edit_text_error_bg_outline));
+//                }else{
+//                    lga_error_txt.setVisibility(View.GONE);
+//                    editText_lga.setBackground(ContextCompat.getDrawable(PosterActivity.this, R.drawable.edit_text_round_bg_outline));
+//                    ActivateSave();
+//                }
 
                 if (str_taskState == null){
                     state_li_lyt.setBackground(ContextCompat.getDrawable(PosterActivity.this, R.drawable.edit_text_select_error_bg_outline));
