@@ -36,35 +36,35 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="54dp"
+                android:gravity="bottom"
                 app:layout_collapseMode="pin"
                 android:background="@android:color/white"
                 app:contentInsetStartWithNavigation="0dp"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:theme="@style/Toolbar.Light"  />
 
-           <RelativeLayout
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:layout_gravity="center"
-               android:layout_marginTop="15dp"
-               android:gravity="center_horizontal">
-               <TextView
-                   android:id="@+id/task_title"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Add Task"
-                   android:fontFamily="@font/poppins_semibold"
-                   android:textColor="@color/textColorDark"
-                   android:textAlignment="center"
-                   android:textSize="14sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Task Info"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/textColorDark"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:gravity="center"/>
 
-           </RelativeLayout>
-
+            <ImageView
+                android:id="@+id/toggle_nav_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:src="@drawable/ic_more_vertical"
+                android:layout_marginEnd="31dp"
+                app:tint="@color/textColorDark"/>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
-
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -103,9 +103,9 @@
                         android:id="@+id/editText_title"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textSize="14sp"
                         android:background="@drawable/edit_text_round_bg_outline"
-                        android:focusable="true"
-                      />
+                        android:focusable="true" />
 
                 </com.google.android.material.textfield.TextInputLayout>
                 <TextView
@@ -191,6 +191,7 @@
                             android:layout_height="match_parent"
                             android:background="@drawable/edit_text_round_bg_outline"
                             android:focusable="true"
+                            android:textSize="14sp"
                             android:textColorHint="@color/input_field" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -249,7 +250,7 @@
                                 android:text="Select category"
                                 android:layout_gravity="center_vertical"
                                 android:textColor="@color/textColorDark_alt"
-                                android:textSize="11sp" />
+                                android:textSize="14sp" />
 
                             <View
                                 android:layout_width="0dp"
@@ -325,7 +326,7 @@
                             android:text="Select subcategory"
                             android:layout_gravity="center_vertical"
                             android:textColor="@color/textColorDark_alt"
-                            android:textSize="11sp" />
+                            android:textSize="14sp" />
 
                         <View
                             android:layout_width="0dp"
@@ -399,7 +400,7 @@
                             android:text="Select skill"
                             android:layout_gravity="center_vertical"
                             android:textColor="@color/textColorDark_alt"
-                            android:textSize="11sp" />
+                            android:textSize="14sp" />
 
                         <View
                             android:layout_width="0dp"
@@ -429,11 +430,85 @@
             </LinearLayout>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:id="@+id/address_lyt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/skills_lyt"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Street address"
+                        android:textColor="@color/textColorDark_alt" />
+                    <Button
+                        android:id="@+id/find_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:textAllCaps="false"
+                        android:background="@drawable/btn_outline_blue"
+                        android:text="Find Address"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/colorPrimary"
+                        android:drawableStart="@drawable/ic_location_pin"
+                        android:drawablePadding="5dp"
+                        />
+                </RelativeLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/spacing_xmlarge"
+                    android:layout_marginTop="@dimen/spacing_middle"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editText_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:background="@drawable/edit_text_round_bg_outline"
+                        android:focusable="true"
+                        android:textColorHint="@color/input_field" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/address_error_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:text="This field is required"
+                    android:drawablePadding="3dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/error_form"
+                    app:drawableStartCompat="@drawable/ic_info_validate"
+                    app:drawableTint="@color/error_form" />
+            </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/location_lyt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/skills_lyt"
+                android:layout_below="@id/address_lyt"
                 android:orientation="horizontal">
 
 
@@ -448,6 +523,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="State"
+                        android:layout_marginBottom="9dp"
                         android:textColor="@color/textColorDark_alt" />
 
                     <com.github.florent37.shapeofview.shapes.RoundRectView
@@ -476,7 +552,7 @@
                                 android:text="Select State"
                                 android:layout_gravity="center_vertical"
                                 android:textColor="@color/textColorDark_alt"
-                                android:textSize="11sp" />
+                                android:textSize="14sp" />
 
                             <View
                                 android:layout_width="0dp"
@@ -521,22 +597,26 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:visibility="invisible"
-                        android:text="LGA"
+                        android:text="City"
                         android:textColor="@color/textColorDark_alt"
                         android:textSize="14sp" />
 
-                    <Button
-                        android:id="@+id/find_location"
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/btn_outline_blue"
-                        android:text="Find location"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorPrimary"
-                        android:drawableStart="@drawable/ic_location_pin"
-                        android:drawablePadding="5dp"
-                        />
+                        android:layout_height="@dimen/spacing_xmlarge"
+                        android:layout_marginTop="@dimen/spacing_middle"
+                        app:hintEnabled="false">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="14dp"
+                            android:background="@drawable/edit_text_round_bg_outline"
+                            android:focusable="false"
+                            android:textColorHint="@color/input_field" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
                     <TextView
                         android:id="@+id/lga_error_txt"
                         android:layout_width="wrap_content"
@@ -554,68 +634,6 @@
 
             </LinearLayout>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <LinearLayout
-                android:id="@+id/address_lyt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/location_lyt"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Street address"
-                    android:textColor="@color/textColorDark_alt" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/spacing_xmlarge"
-                    android:layout_marginTop="@dimen/spacing_middle"
-                    app:hintEnabled="false">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editText_address"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/edit_text_round_bg_outline"
-                        android:focusable="true"
-                        android:textColorHint="@color/input_field" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <TextView
-                    android:id="@+id/address_error_txt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="10sp"
-                    android:text="This field is required"
-                    android:drawablePadding="3dp"
-                    android:visibility="gone"
-                    android:layout_marginTop="3dp"
-                    android:textColor="@color/error_form"
-                    app:drawableStartCompat="@drawable/ic_info_validate"
-                    app:drawableTint="@color/error_form" />
-            </LinearLayout>
-
-
            <LinearLayout
                android:id="@+id/post_lyt"
                android:layout_width="match_parent"
@@ -623,7 +641,7 @@
                android:orientation="horizontal"
                android:layout_marginTop="30dp"
                android:layout_marginBottom="20dp"
-               android:layout_below="@id/address_lyt"
+               android:layout_below="@id/location_lyt"
                android:gravity="end">
 
                <com.github.florent37.shapeofview.shapes.RoundRectView
@@ -676,7 +694,6 @@
 
                </com.github.florent37.shapeofview.shapes.RoundRectView>
            </LinearLayout>
-
 
             <com.github.florent37.shapeofview.shapes.RoundRectView
                 android:id="@+id/cats_view_lyt"

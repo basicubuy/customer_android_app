@@ -1,7 +1,9 @@
 package com.ubuyng.app;
 
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.location.Address;
+import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -26,28 +29,40 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.florent37.shapeofview.ShapeOfView;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.AutocompletePrediction;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.ubuyng.app.Responses.TaskResponse;
 import com.ubuyng.app.ubuyapi.Interface.AdapCatInterface;
 import com.ubuyng.app.ubuyapi.Models.ItemDropDown;
 import com.ubuyng.app.ubuyapi.Models.ItemDropSub;
 import com.ubuyng.app.ubuyapi.Models.ItemSkill;
 import com.ubuyng.app.ubuyapi.Models.ItemState;
+import com.ubuyng.app.ubuyapi.Models.TaskRequest;
 import com.ubuyng.app.ubuyapi.adapters.projects.ListDropdownAdapter;
 import com.ubuyng.app.ubuyapi.adapters.projects.SkillDropdownAdapter;
 import com.ubuyng.app.ubuyapi.adapters.projects.StateDropdownAdapter;
 import com.ubuyng.app.ubuyapi.adapters.projects.SubDropdownAdapter;
+import com.ubuyng.app.ubuyapi.retrofit.ApiClient;
 import com.ubuyng.app.ubuyapi.retrofit.UbuyApi;
 import com.ubuyng.app.ubuyapi.util.Constant;
 import com.ubuyng.app.ubuyapi.util.JsonUtils;
+import com.ubuyng.app.ubuyapi.util.Tools;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 import okhttp3.HttpUrl;
@@ -86,7 +101,7 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
     private Integer sub_type_checker, saving_checker;
     private AVLoadingIndicatorView avisave_draft;
     MyApplication App;
-    private Button find_location;
+    private TextView editText_city;
 
 
     @Override
@@ -158,24 +173,25 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
         /*post task functions for validation before task is posted*/
         post_task_sh = findViewById(R.id.post_task_sh);
         editText_title = findViewById(R.id.editText_title);
+        editText_address = findViewById(R.id.editText_address);
 //        check if the edittext has left focus
 
-        find_location = findViewById(R.id.find_location);
+        editText_city = findViewById(R.id.editText_city);
 
-        find_location.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        Uri gmmIntentUri = Uri.parse("geo:0,0?q=");
-                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                        mapIntent.setPackage("com.google.android.apps.maps");
-                        startActivity(mapIntent);
-                    }
-                }, 1000);
-            }
-        });
+//        find_location.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        Uri gmmIntentUri = Uri.parse("geo:0,0?q=");
+//                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+//                        mapIntent.setPackage("com.google.android.apps.maps");
+//                        startActivity(mapIntent);
+//                    }
+//                }, 1000);
+//            }
+//        });
 
        editText_title.setOnFocusChangeListener(new View.OnFocusChangeListener() {
            @Override
@@ -322,10 +338,51 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
                 }
             }
         });
+
+        Places.initialize(getApplicationContext(), "AIzaSyDkWm5A_WGqdfePi7iT1xAS1UdD748Mrk8");
+        Button find_location = findViewById(R.id.find_location);
+        find_location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                List<Place.Field> fieldList = Arrays.asList(Place.Field.ADDRESS, Place.Field.LAT_LNG, Place.Field.NAME);
+                Intent intent = new Autocomplete
+                        .IntentBuilder(AutocompleteActivityMode.OVERLAY, fieldList)
+                        .build(PosterActivity.this);
+                startActivityForResult(intent, 100);
+            }
+        });
+
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 100 && resultCode == RESULT_OK){
+            Place place = Autocomplete.getPlaceFromIntent(data);
+            editText_address.setText(place.getAddress());
 
+            try {
+                List<Address> addresses;
+                Geocoder geocoder = new Geocoder(this, Locale.getDefault());
+                addresses = geocoder.getFromLocation(place.getLatLng().latitude, place.getLatLng().longitude, 1);
+                String address1 = addresses.get(0).getAddressLine(0);
+                String address2 = addresses.get(0).getAddressLine(1);
+                String city = addresses.get(0).getLocality();
+                String state = addresses.get(0).getAdminArea();
+                String country = addresses.get(0).getCountryName();
+                String postalCode = addresses.get(0).getPostalCode();
 
+//                Log.i("Locations", address1 + " |  " + address2 + " | " + city + " | " + state + " | " + country + " | " + postalCode);
+
+                editText_city.setText(city);
+                select_state_txt.setText(state);
+
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
 
     private void validateChecker(){
 
@@ -358,13 +415,13 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
             str_taskSubCategory = subCatData;
             str_taskSubCategoryId = subCatID;
             sub_type_checker = Integer.valueOf(subCatType);
-            if (sub_type_checker == 0){
-                location_lyt.setVisibility(View.VISIBLE);
-                address_lyt.setVisibility(View.VISIBLE);
-            }else{
-                location_lyt.setVisibility(View.GONE);
-                address_lyt.setVisibility(View.GONE);
-            }
+//            if (sub_type_checker == 0){
+//                location_lyt.setVisibility(View.VISIBLE);
+//                address_lyt.setVisibility(View.VISIBLE);
+//            }else{
+//                location_lyt.setVisibility(View.GONE);
+//                address_lyt.setVisibility(View.GONE);
+//            }
         }else{
             sub_cats_view_lyt.setVisibility(View.VISIBLE);
         }
@@ -438,7 +495,8 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
         if (str_taskTitle.trim().length() == 0 || str_taskTitle.trim().length() <= 6 ){
             title_error_txt.setVisibility(View.VISIBLE);
             editText_title.setBackground(ContextCompat.getDrawable(PosterActivity.this, R.drawable.edit_text_error_bg_outline));
-        }else{
+        }
+        else{
             title_error_txt.setVisibility(View.GONE);
             editText_title.setBackground(ContextCompat.getDrawable(PosterActivity.this, R.drawable.edit_text_round_bg_outline));
             ActivateSave();
@@ -452,7 +510,8 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
             budget_error_txt.setVisibility(View.GONE);
             editText_budget.setBackground(ContextCompat.getDrawable(PosterActivity.this, R.drawable.edit_text_round_bg_outline));
             ActivateSave();
-        }else{
+        }
+        else{
 
             budget_error_txt.setVisibility(View.VISIBLE);
             editText_budget.setBackground(ContextCompat.getDrawable(PosterActivity.this, R.drawable.edit_text_error_bg_outline));
@@ -529,7 +588,8 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
                     }
                 }
 
-            }else if(sub_type_checker == 0){
+            }
+            else if(sub_type_checker == 0){
                 if (str_taskTitle != null && str_taskBudget != null && str_taskCategory != null && str_taskSubCategory != null && str_taskState != null & str_taskLga != null && str_taskAddress != null){
                     if (saving_checker == null){
                         postTester();
@@ -541,12 +601,14 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
             }
         }
     }
+
     private void QDraftSave(String skillId) {
         draft_post_txt.setVisibility(View.GONE);
         avisave_draft.setVisibility(View.VISIBLE);
         StartAnim();
         qUploadDraft(skillId);
     }
+
     private void QDeleteSkill(String skillTitle) {
         draft_post_txt.setVisibility(View.GONE);
         avisave_draft.setVisibility(View.VISIBLE);
@@ -562,51 +624,77 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
 //        }
 //    }
 
+    public TaskRequest createRequest(){
+        TaskRequest taskRequest = new TaskRequest();
+        taskRequest.setTask_title(editText_title.getText().toString());
+        taskRequest.setDes(editText_des.getText().toString());
+        taskRequest.setBudget(editText_budget.getText().toString());
+        taskRequest.setCat_id(str_taskCategoryId);
+        taskRequest.setAddress(editText_address.getText().toString());
+        taskRequest.setCity(editText_city.getText().toString());
+        taskRequest.setState(select_state_txt.getText().toString());
+        taskRequest.setSub_id(str_taskSubCategoryId);
+        taskRequest.setUser_id(App.getUserId());
+        return taskRequest;
+    }
+
+    public void saveTask(TaskRequest taskRequest){
+        Call<TaskResponse> taskResponseCall = ApiClient.getTaskService().saveTask(taskRequest);
+        taskResponseCall.enqueue(new Callback<TaskResponse>() {
+            @Override
+            public void onResponse(Call<TaskResponse> call, Response<TaskResponse> response) {
+                Log.i("Response: ", response.toString());
+                if(response.isSuccessful()){
+                    Toast.makeText(PosterActivity.this, "Saved successfully!", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(PosterActivity.this, "Request Failed!", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<TaskResponse> call, Throwable t) {
+                Toast.makeText(PosterActivity.this, "Request Failed!" + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
     // Poster
     private void postTester() {
-        saving_checker = 0;
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(UbuyApi.JSONGETURL+UbuyApi.JSONGETVERSION)
-                    .addConverterFactory(ScalarsConverterFactory.create())
-                    .build();
-
-            // add another part within the multipart request
-//            RequestBody strProject_id =
-//                    RequestBody.create(
-//                            okhttp3.MultipartBody.FORM, strTask_id);
-//            RequestBody strBid_id =
-//                    RequestBody.create(
-//                            okhttp3.MultipartBody.FORM, bid_id);
-
-            // finally, execute the request
-            UbuyApi ubuyapi = retrofit.create(UbuyApi.class);
-            Call<String> call = ubuyapi.postDebug(App.getUserId(), str_taskTitle, str_taskDes, str_taskBudget, str_taskCategoryId, str_taskSubCategoryId);
-            call.enqueue(new Callback<String>() {
-                @Override
-                public void onResponse(Call<String> call,
-                                       Response<String> response) {
-                    HttpUrl main_url = response.raw().request().url();
-                    Log.i("debugger", String.valueOf(main_url));
-                    if (response.body() != null) {
-                        Log.i("onSuccess", response.body().toString());
-                        String jsonresponse = response.body().toString();
-                        parseStatusResponse(jsonresponse);
-                    } else {
-                        saving_checker = null;
-                        Log.i("onEmptyResponse", "Returned empty ");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
-                    }
-                    if (response.isSuccessful()){
-                        saving_checker = null;
-                        Log.i("onEmptyResponse", "Returned success");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
-                    }
-                }
-
-                @Override
-                public void onFailure(@NonNull Call<String> call, @NonNull Throwable t) {
-                    Log.e("Upload error:", Objects.requireNonNull(t.getMessage()));
-                }
-            });
-        }
+        saveTask(createRequest());
+//        saving_checker = 0;
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(UbuyApi.JSONGETURL+UbuyApi.JSONGETVERSION)
+//                .addConverterFactory(ScalarsConverterFactory.create())
+//                .build();
+//        UbuyApi ubuyapi = retrofit.create(UbuyApi.class);
+//        Call<String> call = ubuyapi.postDebug(App.getUserId(), str_taskTitle, str_taskDes, str_taskBudget, str_taskCategoryId, str_taskSubCategoryId);
+//        call.enqueue(new Callback<String>() {
+//            @Override
+//            public void onResponse(Call<String> call,
+//                                   Response<String> response) {
+//                HttpUrl main_url = response.raw().request().url();
+//                Log.i("debugger", String.valueOf(main_url));
+//                if (response.body() != null) {
+//                    Log.i("onSuccess", response.body().toString());
+//                    String jsonresponse = response.body().toString();
+//                    parseStatusResponse(jsonresponse);
+//                } else {
+//                    saving_checker = null;
+//                    Log.i("onEmptyResponse", "Returned empty ");
+//                    //Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
+//                }
+//                if (response.isSuccessful()){
+//                    saving_checker = null;
+//                    Log.i("onEmptyResponse", "Returned success");
+//                    //Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
+//                }
+//            }
+//            @Override
+//            public void onFailure(@NonNull Call<String> call, @NonNull Throwable t) {
+//                Log.e("Upload error:", Objects.requireNonNull(t.getMessage()));
+//            }
+//        });
+    }
 
     private void parseStatusResponse(String jsonresponse) {
         saving_checker = null;
@@ -981,6 +1069,7 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
 
 
     }
+
     private void getDeleteData(String jsonresponse) {
         try {
             JSONObject mainJson = new JSONObject(jsonresponse);
@@ -996,16 +1085,19 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
         }
         ChangeDraftDisplay();
     }
+
     private void ChangeDraftDisplay() {
         draft_post_txt.setVisibility(View.VISIBLE);
         avisave_draft.setVisibility(View.GONE);
         StopAnim();
     }
+
     private void LoadingAnimate() {
         draft_post_txt.setVisibility(View.GONE);
         avisave_draft.setVisibility(View.VISIBLE);
         StartAnim();
     }
+
     private void displaySuggest() {
         cats_rv.setVisibility(View.VISIBLE);
         mAdapterList = new ListDropdownAdapter(PosterActivity.this, mDropDown, this);
@@ -1015,6 +1107,7 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
         mStateAdapter = new StateDropdownAdapter(PosterActivity.this, mState, this);
         state_rv.setAdapter(mStateAdapter);
     }
+
     private void displaySubSuggest() {
         Toast.makeText(PosterActivity.this,"Nothing returned",Toast.LENGTH_LONG).show();
         subcats_rv.setVisibility(View.VISIBLE);
@@ -1042,6 +1135,7 @@ public class PosterActivity extends AppCompatActivity implements AdapCatInterfac
     void StartAnim(){
         avisave_draft.show();
     }
+
     void StopAnim(){
         avisave_draft.hide();
     }

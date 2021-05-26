@@ -14,7 +14,7 @@ import retrofit2.http.POST;
 
 public interface TaskService {
 
-    @POST("customers/post/debug/task")
+    @POST("api_v2/customers/post/debug/task")
     Call<TaskResponse> saveTask(@Body TaskRequest taskRequest);
 
 }

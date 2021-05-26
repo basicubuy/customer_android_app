@@ -71,10 +71,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.uxcam:uxcam:3.2.1@aar'
 
-//    DEPENDABLE
+    //DEPENDABLE
     implementation 'com.facebook.android:facebook-login:5.15.3'
     implementation 'com.facebook.shimmer:shimmer:0.4.0'
-//  one signal
+    //one signal
     implementation 'com.onesignal:OneSignal:3.13.0'
 //    flutterwave sdk
     implementation 'com.github.Flutterwave:rave-android:1.0.49.1'
